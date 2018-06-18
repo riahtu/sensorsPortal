@@ -1,0 +1,114 @@
+
+<div class="container-fluid">
+    <!-- ko if:dataReady()-->
+    <div class="box" style=" border: 1px solid #00a65a">
+        <div class="box-header with-border bg-green-gradient">
+            <span class="info-box-text text-bold">Temperature Analysis</span>
+            <div class="box-tools pull-right">
+                <div class="btn-group">
+                    <button type="button" class="btn btn-box-tool dropdown-toggle" data-toggle="dropdown">
+                        <i class="fa fa-wrench"></i></button>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a href="#">Action</a></li>
+                        <li><a href="#">Another action</a></li>
+                        <li><a href="#">Something else here</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#">Separated link</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- /.box-header -->
+        <div class="box-body">
+            <div class="row">
+                <div class="col-md-8">
+                    <p class="text-center">
+                        <strong>Temperature: Today</strong>
+                    </p>
+
+                    <div class="chart">
+                        <!-- Sales Chart Canvas -->
+                        <div id="lineChart" data-bind="ojComponent: {
+                    component: 'ojChart', 
+                    type: 'line',
+                    series: tempSeriesData, 
+                    groups: tempGroupsValue,
+                    animationOnDisplay: 'auto',
+                    dataCursor: 'on',                    
+                    animationOnDataChange: 'auto', 
+                    timeAxisType: 'mixedFrequency',                  
+                    orientation: 'vertical',                    
+                    yAxis:  {title: 'Temperature (℃elsius)'},
+                    hideAndShowBehavior: 'withRescale',
+                    zoomAndScroll: 'live',           
+                    legend: {rendered: 'on'},
+                    title: {text: '', hAlign: 'center'},
+                    hoverBehavior: 'dim'
+                }"
+                             style="width:100%;height:150px;">
+                        </div>
+                    </div>
+                    <!-- /.chart-responsive -->
+                </div>
+                <!-- /.col -->
+                <div class="col-md-4" >
+                    <div class="info-box  " >
+                        <div class="row">
+                            <div class="col-sm-3 col-xs-6">
+                                <span class="info-box-icon bg-green"><i class="fa fa-thermometer-3"></i></span>
+                            </div>
+                            <div class="col-sm-9 col-xs-6">
+                                <div class=" info-align-center bg-green-gradient">
+                                    <span class="info-box-text">Temperature</span>
+                                    <span class="info-box-number" data-bind="text:meanTemp()+'℃'"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /.info-box-content -->
+                        <div class="row ">
+                            <div class="col-sm-3 col-xs-6 ">                            
+                                <div class="description-block ">
+                                    <span class="box-body" data-bind="text:minTemp()+'℃'"></span>
+                                    <span class="box-title  text-green" style="font-size: 12px;">MIN</span>
+                                </div>
+                                <!-- /.description-block -->
+                            </div>
+                            <!-- /.col -->
+                            <div class="col-sm-3 col-xs-6 ">
+                                <div class="description-block ">
+                                    <span class="box-body"   data-bind="text:maxTemp()+'℃'"></span>
+                                    <span class="box-title text-green" style="font-size: 12px;">MAX</span>
+                                </div>
+                                <!-- /.description-block -->
+                            </div>
+                            <!-- /.col -->
+                            <div class="col-sm-3 col-xs-6 ">
+                                <div class="description-block ">
+                                    <span class="box-body" data-bind="text:meanTemp()+'℃'"></span>
+                                    <span class="box-title text-green" style="font-size: 12px;">MEAN</span>
+                                </div>
+                                <!-- /.description-block -->
+                            </div>
+                            <!-- /.col -->
+                            <div class="col-sm-3 col-xs-6 ">
+                                <div class="description-block">
+                                    <span class="box-body" data-bind="text:varianceTemp()+'℃'"></span>
+                                    <span class="box-title text-green" style="font-size: 12px;">VARIANCE </span>
+                                </div>
+                                <!-- /.description-block -->
+                            </div>
+                        </div>
+                        <!-- /.row -->
+                    </div>				
+                    <!-- /.progress-group -->
+                </div>
+                <!-- /.col -->
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- ./box-body -->
+    </div>
+    <!--        /ko-->    
+</div>
+
+

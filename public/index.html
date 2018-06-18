@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+    <head>
+        <title>Bosch Sensor Kits</title>
+
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="icon" href="css/images/favicon.ico" type="image/x-icon" />
+
+        <link rel="stylesheet" href="js/libs/bootstrap/dist/css/bootstrap.min.css" type="text/css" />
+        <link rel="stylesheet" href="js/libs/lte/css/AdminLTE.css">
+        <link rel="stylesheet" href="js/libs/lte/css/skins/_all-skins.css">
+
+        <link rel="stylesheet" href="css/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="css/ionicons/2.0.1/css/ionicons.min.css">
+
+
+        <link id="css" rel="stylesheet" href="https://static.oracle.com/cdn/jet/v5.0.0/default/css/alta/oj-alta-min.css" type="text/css"/>
+        <link rel="stylesheet" href="css/demo-alta-site-min.css" type="text/css" />
+        <link rel="stylesheet" href="css/app.css" type="text/css" />
+        <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.css" />
+
+    </head>
+    <body>
+
+        <!-- Template for rendering navigation items shared between nav bar and nav list -->
+        <script type="text/html" id="navTemplate">
+
+        <li data-bind="style:{display: (!$data['visible'])?'none':'all'}"><a href="#">
+                <span data-bind="css: $data['iconClass']"></span>
+                <!-- ko text: $data['name'] --> <!--/ko-->
+            </a>
+        </li>
+
+    </script>
+
+    <div id="globalBody" class="oj-offcanvas-outer-wrapper oj-offcanvas-page">
+        <div id="navDrawer" class="oj-contrast-marker oj-web-applayout-offcanvas oj-offcanvas-start">
+            <div role="navigation" data-bind="ojComponent: {component: 'ojNavigationList',
+          optionChange: navChangeHandler, navigationLevel: 'application',
+          item: {template: 'navTemplate'}, data: navDataSource,
+          selection: router.stateId, edge: 'start'}">
+            </div>
+        </div>
+
+
+        <div id="pageContent" class="oj-web-applayout-page " >
+            <div class="oj-flex"></div>
+            <div class="oj-flex-item" ><img src="js/images/bosch_header.PNG" height="15px" width="100%"></div>
+            <header role="banner" class="oj-web-applayout-header">
+ <br>
+                        
+                <div class="oj-web-applayout-max-width oj-flex-bar oj-sm-align-items-center">
+                    <!-- Offcanvas toggle button -->
+                    <div class="oj-flex-bar-start oj-md-hide">
+                        <button class="oj-button-lg" data-bind="click: toggleDrawer,
+                ojComponent: {component:'ojButton', label: 'Application Navigation',
+                chroming: 'half', display: 'icons', icons: {start: 'oj-web-applayout-offcanvas-icon'}}">
+                        </button>
+                    </div>
+                    <div data-bind="css: smScreen() ? 'oj-flex-bar-center-absolute' : 'oj-flex-bar-middle'">
+                       
+                        <span role="img" class="oj-sm-only-hide oj-icon" title="Company Logo" alt="Company Logo" data-bind="css:domain"></span>
+                        <h1 class="oj-web-applayout-header-title" title="Application Name" data-bind="text: appName,css:titleStyle"></h1>
+                    </div>
+                    <!--div class="oj-flex-bar-end">
+                    <!-- Responsive Toolbar -->
+                    <!--div data-bind="ojComponent: {component:'ojToolbar'}">
+                        <button id="userMenu"
+                                data-bind="ojComponent: {component: 'ojButton', label: displayName,
+              display: smScreen() ? 'icons' : 'all',
+              icons: smScreen() ? {start: 'oj-icon demo-appheader-avatar', end: null} : {end: 'oj-component-icon oj-button-menu-dropdown-icon'},
+              chroming: 'half', menu: '#menu1'}">
+                        </button>
+                        <ul id='menu1' data-bind="ojComponent: {component: 'ojMenu', select: menuItemSelect}" style="display:none">
+                            <li id="pref"><a href="#">Preferences</a></li>
+                            <li id="help"><a href="#">Help</a></li>
+                            <li id="about"><a href="#">About</a></li>
+                            <li id="out"><a href="#" data-bind='text:username'>Sign Out</a></li>
+                        </ul>
+                    </div>
+                </div-->
+                </div>
+                <div role="navigation" class="oj-web-applayout-max-width oj-web-applayout-navbar" style="height: 30px">
+                    <div 
+                        class="oj-web-applayout-navbar oj-sm-only-hide oj-md-condense oj-md-justify-content-flex-end">
+                    </div>
+                </div>
+
+            </header>
+
+            <div class="oj-offcanvas-outer-wrapper" >
+                <div class="oj-web-applayout-max-width oj-web-applayout-content"  data-bind="ojModule: router.moduleConfig">
+                </div>
+
+                <div id="endDrawer"
+                     class="oj-offcanvas-end oj-panel oj-offcanvas-overlay-shadow"
+                     style="width: 75%;height:75%">
+                    <div  id="chatbot" ></div> 
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <script type="text/javascript" src="https://static.oracle.com/cdn/jet/v5.0.0/3rdparty/require/require.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+
+
+</body>
+
+</html>

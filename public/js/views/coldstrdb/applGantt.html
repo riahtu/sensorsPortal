@@ -1,0 +1,95 @@
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+<div id="cspanel" class="box ui-sortable-handle" >
+    <!-- /.box-header -->
+    <div class="box-body ">
+        <div class="row">
+            <div class="col-md-3">
+                <oj-label for="catselect">Category</oj-label>
+                <oj-select-one id="catselect" style=" padding-left: 20px" value="{{selectedCat}}" options="[[categoryArray]]" on-value-changed="{{catselect}}">
+                </oj-select-one>
+            </div>
+            <div class="col-md-3">
+                <oj-label for="typeselect">Type</oj-label>
+                <oj-select-one id="typeselect" style=" padding-left: 20px" value="{{selectedType}}" options="[[catTypeArray]]" >
+                </oj-select-one>
+            </div>
+            <div class="col-md-3">
+                <oj-label for="dateSelect">Date</oj-label>
+                <input id="dateSelect" data-bind="ojComponent: {component: 'ojInputDate',optionChange: optionChange,value: date}" />
+            </div>
+            <div class="col-md-2 pad-top-25">
+                <button class='btn btn-primary' data-bind="click:loadData">Load</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 col-sm-12" style=" padding: 50px 0px 0px;">
+                <p class="text-center">
+                    <strong>Events </strong>
+                </p>
+                <!--ko if:ready-->
+                <div id="componentDemoContent" style="width: 1px; min-width: 100%; margin-left: 40px">
+                    <oj-gantt id="gantt"
+                              axis-position="bottom"
+                              start="[[projectStartDate.toISOString()]]"
+                              end="[[projectEndDate.toISOString()]]"
+                              gridlines='{
+                              "horizontal": "visible",
+                              "vertical": "visible"
+                              }'
+                              major-axis='{
+                              "scale": "days",
+                              "zoomOrder": ["weeks", "days", "hours", "minutes"]
+                              }'
+                              minor-axis='{
+                              "scale": "hours",
+                              "zoomOrder": ["days", "hours", "minutes", "seconds"]
+                              }'
+                              row-axis.rendered="on"
+                              selection-mode="single"
+                              reference-objects='[[[{"value": currentDate.toISOString()}]]]'
+                              rows="{{applData}}"
+                              style="width:90%;height:300px">
+                    </oj-gantt>
+                </div>
+                <!--/ko-->
+                <!--        ko if:!ready()-->
+                <div class="overlay" style="height: 500px;">
+                    <i class="fa fa-refresh fa-spin"></i>
+                </div>
+                <!--/ko-->
+            </div>
+        </div>
+        <div class="row">
+            <div class="box box-primary ui-sortable-handle" style="min-height:250px">
+                <div class="box-header with-border">
+                    <h3 class="box-title">Events Detail</h3>
+                </div>
+                <!-- /.box-header -->
+                <div id="eventscroll"  class="box-body no-padding">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>No.</th>
+                                <th>Appliance</th>
+                                <th>Events </th>
+                            </tr>
+                        </thead> 
+                        <!--ko if:ready-->
+                        <tbody data-bind="foreach: applTasks">
+                            <tr>
+                                <td data-bind="text: $index()+1">None</td>
+                                <td data-bind="text: name">0</td>
+                                <td data-bind="text: events">0</td>
+                            </tr>
+                        </tbody>
+                        <!--/ko-->
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>

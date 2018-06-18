@@ -1,0 +1,19 @@
+<div data-bind="ojComponent: {component:'ojToolbar'}">            
+    <!--ko if:readyLoc-->
+    <span class="oj-toolbar-separator" role="separator" aria-orientation="vertical"></span>
+    <button id="locMenu" 
+            data-bind="ojComponent: {component: 'ojButton', label: currentLocation,
+                  display: $parent.smScreen() ? 'icons' : 'all',
+                  icons: $parent.smScreen() ? {start: 'oj-icon demo-avatar-icon', end: null} : {end: 'oj-component-icon oj-button-menu-dropdown-icon'},
+                  chroming: 'half', menu: '#location'}">
+    </button>                            
+    <ul id='location' data-bind="ojComponent: {component: 'ojMenu', select: menuLocSelect}" style="display:none">
+        <!-- ko foreach: location -->
+        <li data-bind="attr: {id:$data.id,title:$data.title}" class='oj-menu-item'>
+            <a href="#"><span  data-bind="text:title"></span></a>
+        </li>
+        <!-- /ko -->
+    </ul>
+    <span class="oj-toolbar-separator" role="separator" aria-orientation="vertical"></span>
+    <!--/ko-->
+</div>

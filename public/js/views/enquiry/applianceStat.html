@@ -1,0 +1,247 @@
+<style>
+    .header {
+        color: white;
+    }
+
+    .infobox-rad {
+        border-radius: 20px;
+    }
+</style>
+<div class="box  col-md-12">
+    <div class="box-header with-border">
+        <h3 class="box-title">Energy - Temperature Analytics</h3>
+    </div>
+    <div class="box-body">
+        <div class="col-md-3">
+
+            <oj-label for="typselect">Type</oj-label>
+            <oj-select-one id="typselect" style=" padding-left: 20px" value="{{selectedType}}" options="[[typeArray]]" on-value-changed="{{typeselect}}">
+            </oj-select-one>
+        </div>
+
+        <div class="col-md-3">
+            <oj-label for="applselect">Appliance</oj-label>
+            <oj-select-one id="applselect" style=" padding-left: 20px" value="[[selectedAppl]]" options="[[typeApplArray]]" on-value-changed="{{applselect}}">
+            </oj-select-one>
+        </div>
+
+        <div class="col-md-3">
+            <oj-label for="dateSelect">Date</oj-label>
+            <input id="dateSelect" data-bind="ojComponent: {component: 'ojInputDate',optionChange: optionChange,value: date}" />
+        </div>
+
+        <div class="col-md-2 pad-top-25">
+            <button class='btn btn-primary' data-bind="click:loadData">Load</button>
+        </div>
+
+        <div class="row col-md-12">
+            <div class="col-lg-6 col-md-6 col-sm-6">
+                <div class="box  box-default box-solid">
+                    <div class="box-header with-border">
+                        <span class="box-title text-black">Energy</span>
+                    </div>
+                    <div class="box-body">
+                        <div class="col-md-4 col-sm-6 col-xs-12">
+                            <div class="info-box bg-green infobox-rad ">
+                                <div class="info-box-content" style=" margin-left: 0px">
+                                    <span class="header">Total (kWh)</span>
+                                    <div class="dbchart">
+                                        <h2 class="header" data-bind="text: applianceEnergy"></h2>
+                                    </div>
+                                </div>
+                                <!-- /.info-box-content -->
+                            </div>
+                            <!-- /.info-box -->
+                        </div>
+                        <div class="col-md-4 col-sm-6 col-xs-12">
+                            <div class="info-box bg-green infobox-rad ">
+                                <div class="info-box-content" style=" margin-left: 0px">
+                                    <span class="header">Cycles</span>
+                                    <div class="dbchart">
+                                        <h2 class="header" data-bind="text: cycles"></h2>
+                                    </div>
+                                </div>
+                                <!-- /.info-box-content -->
+                            </div>
+                            <!-- /.info-box -->
+                        </div>
+                        <div class="col-md-4 col-sm-6 col-xs-12">
+                            <div class="info-box bg-green infobox-rad">
+                                <div class="info-box-content" style=" margin-left: 0px">
+                                    <span class="header">Uptime</span>
+                                    <div class="dbchart">
+                                        <h2 class="header" data-bind="text: upTime"></h2>
+                                    </div>
+                                </div>
+                                <!-- /.info-box-content -->
+                            </div>
+                            <!-- /.info-box -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class=" col-lg-6 col-md-6 col-sm-6">
+                <div class="box box-default box-solid">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">Temperature</h3>
+                    </div>
+                    <div class="box-body">
+                        <div class="col-md-4 col-sm-6 col-xs-12">
+                            <div class="info-box bg-blue-active infobox-rad">
+                                <div class="info-box-content" style=" margin-left: 0px">
+                                    <span class="header">Minimum</span>
+                                    <div class="dbchart">
+                                        <h2 class="header" data-bind="text: minTemp"></h2>
+                                    </div>
+                                </div>
+                                <!-- /.info-box-content -->
+                            </div>
+                            <!-- /.info-box -->
+                        </div>
+                        <div class="col-md-4 col-sm-6 col-xs-12">
+                            <div class="info-box bg-blue-active infobox-rad">
+                                <div class="info-box-content" style=" margin-left: 0px">
+                                    <span class="header">Maximum</span>
+                                    <div class="dbchart">
+                                        <h2 class="header" data-bind="text: maxTemp"></h2>
+                                    </div>
+                                </div>
+                                <!-- /.info-box-content -->
+                            </div>
+                            <!-- /.info-box -->
+                        </div>
+                        <div class="col-md-4 col-sm-6 col-xs-12">
+                            <div class="info-box bg-blue-active infobox-rad">
+                                <div class="info-box-content" style=" margin-left: 0px">
+                                    <span class="header">Average</span>
+                                    <div class="dbchart">
+                                        <h2 class="header" data-bind="text: avgTemp"></h2>
+                                    </div>
+                                </div>
+                                <!-- /.info-box-content -->
+                            </div>
+                            <!-- /.info-box -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-12">
+            <div class="col-md-2">
+                <div>
+                    Split Dual-Y
+                </div>
+                <div id="splitDualYButtonSet" class="oj-buttonset-width-auto" aria-label="Choose only one setting." aria-controls="barChart"
+                    data-bind="ojComponent: {component: 'ojButtonset', checked: dualY, 
+                                                      optionChange: updateDualY}">
+                    <!-- ko foreach: dualYOptions -->
+                    <label data-bind="attr: {for: id}, text: label"></label>
+                    <input type="radio" name="splitDualY" data-bind="value: id, attr: {id: id}, ojComponent: {component: 'ojButton', label: label}"
+                    />
+                    <!--/ko-->
+                </div>
+            </div>
+        </div>
+        <!-- <div class="col-md-12">
+            <div class="col-md-2">
+                <label for="splitterPosition" style="font-weight:bold;">Splitter Position</label>
+                <input id="splitterPosition" data-bind="ojComponent: {component: 'ojInputNumber',
+             max:1, min:0, step:.1, disabled: true, value: splitterValue, rootAttributes: {style:'max-width:50px;'}}" />
+            </div>
+        </div>div> -->
+
+
+
+
+        <div id='chart-container' class="col-md-12">
+            <!--ko if:ready()-->
+
+            <oj-chart id="lineChart"
+            type="line"
+            series="[[energyTempSeriesValue]]"
+            groups="[[energyTempGroupsValue]]"
+            split-dual-y=[[dualY]]
+            splitter-position=[[splitterValue]]
+            time-axis-type="mixedFrequency"
+            zoom-and-scroll="live"
+            style-defaults.line-type ="curved"
+            on-oj-viewport-change="[[updateXAxis]]"
+            on-oj-viewport-change-input="[[updateXAxis]]"
+            overview.rendered="on" overview.height="0"
+            x-axis="[[lineXAxis]]"
+            y-axis.title="Temperature (°C) "
+            y2-axis.title="Appliance Energy (kWh)"
+            legend.max-size="25%" legend.position="end"
+            data-cursor="on" data-cursor-behavior="snap" 
+            data-cursor-position="{{dataCursorPositionValue}}"
+            style="width:100%;height:350px;">
+          </oj-chart>
+
+
+            <!-- <div id="lineChart" data-bind="ojComponent: {
+                component: 'ojChart', 
+                type: 'line',
+                series: energyTempSeriesValue, 
+                groups:  energyTempGroupsValue,
+                splitDualY: dualY,
+                splitterPosition: splitterValue,
+                animationOnDisplay: 'auto',
+                animationOnDataChange: 'auto',
+                styleDefaults:{lineType:'curved' },
+                y2Axis:{title: 'Appliance Energy (kWh)'},
+                yAxis: {title: 'Temperature (°C) '},
+                xAxis: lineXAxis,
+                dataCursor: 'on', dataCursorBehavior: 'smooth', dataCursorPosition: dataCursorPositionValue,
+                timeAxisType: 'mixedFrequency',
+                hideAndShowBehavior: 'withRescale',
+                zoomAndScroll: 'live'
+                }" style="width:100%;height:350px;">
+            </div> -->
+
+            <oj-chart id="eventChart"
+            type="line"
+            series="[[eventsArray]]"
+            groups="[[energyTempGroupsValue]]"
+            time-axis-type="mixedFrequency"
+            zoom-and-scroll="live"
+            on-oj-viewport-change="[[updateXAxis]]"
+            on-oj-viewport-change-input="[[updateXAxis]]"
+            overview.rendered="on" overview.height="0"
+            x-axis="[[compressorXAxis]]"
+            style-defaults.line-type ="stepped"
+            y2-axis.min-step=1
+            legend.max-size="25%" legend.position="end"
+            data-cursor="on" data-cursor-behavior="snap" 
+            data-cursor-position="{{dataCursorPositionValue}}"
+            style="width:95%;height:150px;">
+          </oj-chart>
+
+
+            <!-- <div id="lineChart" data-bind="ojComponent: {
+                component: 'ojChart', 
+                type: 'line',
+                series: eventsArray, 
+                groups:  energyTempGroupsValue,
+                y2Axis:{minStep:1},
+                styleDefaults:{lineType:'stepped' },
+                title: {text: 'Compressor Cycles', hAlign: 'center'},
+                animationOnDisplay: 'auto',
+                animationOnDataChange: 'auto',
+                legend: {rendered: 'off'},
+                xAxis: compressorXAxis,
+                on-oj-viewport-change="[[updateXAxis]]"
+                on-oj-viewport-change-input="[[updateXAxis]]"
+                dataCursor: 'on', dataCursorBehavior: 'smooth', dataCursorPosition: dataCursorPositionValue,
+                timeAxisType: 'mixedFrequency',
+                hideAndShowBehavior: 'withRescale',
+                zoomAndScroll: 'live'
+   
+    }" style="width:93%;height:150px;">
+            </div> -->
+            <!--/ko-->
+        </div>
+
+
+    </div>
+</div>

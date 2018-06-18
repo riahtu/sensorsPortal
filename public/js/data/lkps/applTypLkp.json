@@ -1,0 +1,24 @@
+[{
+    "value": "chiller",
+    "label": "Chiller"
+},
+{
+    "value": "freezer",
+    "label": "Freezer"
+},
+{
+    "value": "refrigerator",
+    "label": "Refrigerator"
+},
+{
+    "value": "cooler",
+    "label": "Cooler"
+},
+{
+    "value": "heater",
+    "label": "Heater"
+},
+{
+    "value": "microwave",
+    "label": "Microwave"
+}]

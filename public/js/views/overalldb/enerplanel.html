@@ -1,0 +1,65 @@
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<div id="enerpanel" class="box box-primary ui-sortable-handle" style="height: 250px">
+    <div class="box-header with-border">
+        <h3 class="box-title">Consumption</h3>
+    </div>
+    <!-- /.box-header -->
+    <div class="box-body ">
+        <!--ko if:ready-->    
+        <div class="col-sm-6 col-xs-6">
+            <div class="info-box" style="min-height: 50px;">   
+                <div class="col-sm-3 col-xs-6">
+                    <span class="info-box-icon  bg-blue-gradient " style=" height: 40px; width: 40px; font-size: 25px; line-height: 40px; border-radius: 50%"><i class="fa fa-bolt"></i></span>
+                </div>
+                <div class="col-sm-9 col-xs-6">
+                    <div class=" info-align-center ">
+                        <span class="info-box-text">Energy</span>
+                        <span class="info-box-number text-blue" data-bind="text: totEnergy() +' kwh'"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 col-xs-6">
+            <div class="info-box" style="min-height: 50px;">   
+                <div class="col-sm-3 col-xs-6">
+                    <span class="info-box-icon  bg-orange " style=" height: 40px; width: 40px; font-size: 25px; line-height: 40px; border-radius: 50%"><i class="fa fa-rupee"></i></span>
+                </div>
+                <div class="col-sm-9 col-xs-6">
+                    <div class=" info-align-center ">
+                        <span class="info-box-text">Cost</span>
+                        <span class="info-box-number text-orange" data-bind="text:'Rs.'+totCost()"></span>
+                    </div>
+                </div>
+            </div>
+        </div>        
+
+        <!-- /.info-box-content -->
+        <!--/ko-->
+        <!-- /.row -->
+
+    </div>	
+    <div class="box-footer text-black">
+        <div class="row">
+            <!--ko if:ready-->     
+            <!-- ko foreach: deviceEnergyArray -->
+            <div class="col-sm-6">
+                <!-- Progress bars -->
+                <div class="clearfix">
+                    <span class="pull-left" data-bind="text: name"></span>
+                    <span class="pull-right" data-bind="text: energy +' kWh'"></span>
+                </div>
+                <div class="progress xs">
+                    <div class="progress-bar progress-bar-green" data-bind="style: { width:percent}"></div>
+                </div>
+            </div>
+            <!-- /ko -->
+            <!-- /ko -->
+            <!-- /.col -->
+        </div>
+        <!-- /.row -->
+    </div>
+</div>	

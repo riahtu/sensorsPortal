@@ -1,0 +1,123 @@
+
+<div class="box box-primary col-lg-12">
+    <div class="box-header with-border">
+        <span class="text-white box-title">Temperature</span>
+    </div>
+    <!-- /.box-header -->
+    <div class="box-body">
+        <div class="oj-flex oj-flex-items-pad  " style=" padding: 5px;">
+            <div class="oj-flex-item oj-sm-6 oj-lg-3" >
+                <oj-label  for="dsel">Appliance</oj-label>
+                <oj-select-one id="dsel"  value="{{applianceId}}"   options="{{applicanceLkp}}">
+                </oj-select-one>
+            </div>
+            <div class="oj-flex-item oj-sm-6 oj-lg-3" >
+                <oj-label for="frdt" >From Date</oj-label>
+                <oj-input-date-time id="frdt" value='{{fromDt}}'  converter= '{
+                                    "type":"datetime", 
+                                    "options": {"pattern": " dd/MM/y, h:mm:ss a"}}'></oj-input-date-time>
+            </div>
+            <div class="oj-flex-item oj-sm-6 oj-lg-3" >
+                <oj-label for="todt">To Date</oj-label>
+                <oj-input-date-time id="todt" value='{{toDt}}' converter= '{
+                                    "type":"datetime", 
+                                    "options": {"pattern": " dd/MM/y, h:mm:ss a"}}'"></oj-input-date-time>
+            </div>
+            <div class="oj-flex-item oj-sm-2 pad-top-25" >
+                <div class="btn-group">
+                    <button type="button" class="btn btn-primary" data-bind="click: filterApp"><i class="fa fa-search"></i></button>                    
+                    <div class="spacer"></div>
+                    <button type="button" class="btn btn-warning" data-bind="click: downloadFile"><i class="fa fa-download"></i></button>
+                    <div class="spacer"></div>
+                    <button type="button" class="btn btn-success" data-bind="click: function() {
+                        loadChartData();
+                        document.querySelector('#modalDialog1').open();
+                      }">
+                        <i class="fa fa-line-chart"></i>
+                    </button>                     
+                </div>
+            </div>                    
+        </div>
+        <div class="oj-xl-12 oj-lg-12 oj-md-12 oj-flex-item">
+            <!--ko if:ready-->      
+            <div class="box-body no-padding">
+                <table class="table table-bordered table-striped dataTable table-condensed">
+                    <thead class="bg-primary text-white align" >
+                    <th style="text-align:center;">Date</th>
+                    <th style="text-align:center;">Time</th>
+                    <th style="text-align:center;">Appliance</th>
+                    <th style="text-align:center;">Name</th>
+                    <th style="text-align:center;">Temperature</th>
+                    <th style="text-align:center;">Battery</th>
+                    </thead>
+                    <!--ko if:ready-->        
+                    <tbody data-bind="foreach:dataObservableArray">
+                        <tr>
+                            <td data-bind="text:new Date(ts).toLocaleDateString()" ></td>
+                            <td data-bind="text:new Date(ts).toLocaleTimeString()" ></td>
+                            <td data-bind="text:device"></td>
+                            <td data-bind="text:devDesc"></td>
+                            <td data-bind="text:temp"></td>
+                            <td data-bind="text:battery" ></td>
+                        </tr>     
+                    </tbody>
+                    <!--/ko-->
+                </table>
+            </div>        
+            <!--/ko-->  
+            <!--        ko if:!ready()-->
+            <div class="overlay" style="height: 470px;">
+                <i class="fa fa-refresh fa-spin"></i>
+            </div>
+            <!--/ko-->          
+        </div> 
+    </div>
+    <!-- /.box-body -->
+    <!-- /.box-body -->  
+    <div class="box-footer">
+        <i> <span class="text-info">Only top 300 rows matching the criteria will be fetched</span></i>
+    </div>     
+</div>
+
+
+<oj-dialog style="display:none;width:800px;height:500px;min-width:250px;max-width:1000px;
+           min-height:450px;max-height:800px;" id="modalDialog1" cancel-behavior='none'>
+    <div slot="header">
+        <oj-button id="okButton" class="pull-right" data-bind="click: function() {
+                  document.querySelector('#modalDialog1').close();
+                }">  Close
+        </oj-button>
+    </div>
+    <div slot="header">
+        <!--ko if:chartReady-->
+        <select id="applSelect" class="time-select oj-component-initnode pull-left" data-bind="ojComponent: {
+                component: 'ojSelect',
+                pickerAttributes: {class: 'chart-panel-popup'},
+                optionChange: loadAppChartData,
+                value: selectedAppl,
+                options: chartAppLkpData}" tabindex="-1" aria-hidden="true">
+        </select>
+        <!--/ko-->
+        <oj-button id="okButton" class="pull-right" data-bind="click: function() {
+                  document.querySelector('#modalDialog1').close();
+                }">  Close
+        </oj-button>
+
+    </div>
+    <div slot="body">
+        <!--ko if:chartReady-->
+        <oj-chart id="lineChart"
+                  type="line"
+                  series="[[lineSeriesValue]]"
+                  animation-on-display="auto"
+                  animation-on-data-change="auto"
+                  time-axis-type="mixedFrequency"
+                  orientation="[[orientationValue]]"
+                  hover-behavior="dim"   
+                  zoom-and-scroll="live"
+                  legend.position="top"
+                  style="width:100%;height:350px;">
+        </oj-chart>
+        <!--/ko-->
+    </div>
+</oj-dialog>

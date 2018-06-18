@@ -1,0 +1,105 @@
+<div class="col-md-12">
+    <div class="box box-primary">
+        <div class="box-header with-border">
+            <h3 class="box-title">Bosch XDK</h3>
+        </div>
+        <!-- /.box-header -->
+        <div class="box-body">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="chart">
+                        <!-- Sales Chart Canvas -->
+                        <img src="css/images/xdk.jpg" alt="" style="width:60%" class="pad-top center-block"/>
+                    </div>
+                    <!-- /.chart-responsive -->
+                </div>
+                <!-- /.col -->
+
+                <!-- /.col -->
+                <div class="col-md-5 border-right border-left">
+                    <div class="box-body">
+                        <a class="btn btn-app">
+                            <h2 data-bind="text:temp">23</h2>
+                            <span> Temperature (C)</span>
+                        </a>
+                        <a class="btn btn-app">
+                            <h2 data-bind="text:rh">23</h2>
+                            <span> Humidity (%)</span>
+                        </a>
+                        <a class="btn btn-app">
+                            <h2 data-bind="text:press">23</h2>
+                            <span> Pressure (kPa)</span>
+                        </a>
+                        <a class="btn btn-app">
+                            <h2 data-bind="text:lum">23</h2>
+                            <span> Luminosity (lux)</span>
+                        </a>
+                        <a class="btn btn-app">
+                            <h2 data-bind="text:vib">23</h2>
+                            <span> Shock (L2 norm)</span>
+                        </a>
+                        <a class="btn  btn-app">
+                            <h2 data-bind="text:btn,css:btncss" class="bold">23</h2>
+                            <span> Button</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /.box -->
+    </div>
+
+    <div class="col-xs-12 no-padding">
+        <!-- interactive chart -->
+        <div class="box box-default">
+            <div class="box-header">
+                <i class="fa fa-line-chart"></i>
+
+                <h3 class="box-title">Vibration Chart</h3>
+                <div class="box-tools pull-right">
+                    <div class="btn-group" id="realtime" data-toggle="btn-toggle">
+                        <button type="button" class="btn btn-default btn-xs " data-toggle="on">Real time</button>
+                        <button type="button" class="btn btn-default btn-xs" data-toggle="off">History</button>
+                    </div>
+                </div>
+
+            </div>
+            <div class="box-body">
+                <div id="chartContainer" style="height: 300px; width: 100%;">
+
+                </div>
+            </div>
+            <!-- /.box-body-->
+        </div>
+        <!-- /.box -->
+
+    </div>
+
+
+    <div class="col-xs-12 no-padding">
+        <!-- interactive chart -->
+        <div class="box box-default">
+            <div class="box-header">
+                <i class="fa  fa-lightbulb-o"></i>
+
+                <h3 class="box-title">Luminousity Chart</h3>
+                <div class="box-tools pull-right">
+                    <div class="btn-group" id="realtime" data-toggle="btn-toggle">
+                        <button type="button" class="btn btn-default btn-xs " data-toggle="on">Real time</button>
+                        <button type="button" class="btn btn-default btn-xs" data-toggle="off">History</button>
+                    </div>
+                </div>
+
+            </div>
+            <div class="box-body">
+                <div id="chartContainer1" style="height: 300px; width: 100%;">
+
+                </div>
+            </div>
+            <!-- /.box-body-->
+        </div>
+        <!-- /.box -->
+
+    </div>
+
+</div>

@@ -1,0 +1,70 @@
+{
+    "High": 2,
+    "Medium": 1,
+    "Low": 3,
+    "data": [
+        {
+            "INC_ID": "INC00001",
+            "ASSET_ID": "TRAFO-0004",
+            "INC_DATE": 1521551318102,
+            "INTERVAL": "60 Mins",
+            "STATUS": "New",
+            "TYPE": "Oil Level",
+            "TITLE": "Oil Level below 80%",
+            "PRIORITY": "High"
+        },
+        {
+            "INC_ID": "INC00002",
+            "ASSET_ID": "TRAFO-0004",
+            "INC_DATE": 1519882200000,
+            "INTERVAL": "90 Mins",
+            "STATUS": "Closed",
+            "TYPE": "Oil Level",
+            "TITLE": "Oil Level below 90%",
+            "PRIORITY": "High"
+        },
+        {
+            "INC_ID": "INC00003",
+            "ASSET_ID": "TRAFO-0003",
+            "INC_DATE": 1521118800000,
+            "INTERVAL": "5 Days",
+            "STATUS": "Closed",
+            "TYPE": "Temperature",
+            "TITLE": "Temperature threshold breach > 110° C",
+            "PRIORITY": "Medium"
+        }
+        ,
+        {
+            "INC_ID": "INC00004",
+            "ASSET_ID": "TRAFO-0001",
+            "INC_DATE": 1521450000000,
+            "INTERVAL": "1 Day",
+            "STATUS": "In Progress",
+            "TYPE": "Maintenance",
+            "TITLE": "Routine Maintenance date reached",
+            "PRIORITY": "Low"
+        }
+        ,
+        {
+            "INC_ID": "INC00005",
+            "ASSET_ID": "TRAFO-0003",
+            "INC_DATE": 1521450000000,
+            "INTERVAL": "1 Day",
+            "STATUS": "In Progress",
+            "TYPE": "Maintenance",
+            "TITLE": "Routine Maintenance date reached",
+            "PRIORITY": "Low"
+        }
+        ,
+        {
+            "INC_ID": "INC00006",
+            "ASSET_ID": "TRAFO-0002",
+            "INC_DATE": 1521450000000,
+            "INTERVAL": "1 Day",
+            "STATUS": "In Progress",
+            "TYPE": "Maintenance",
+            "TITLE": "Routine Maintenance date reached",
+            "PRIORITY": "Low"
+        }
+    ]
+}

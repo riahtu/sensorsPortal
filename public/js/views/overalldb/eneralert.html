@@ -1,0 +1,49 @@
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+<div class="box box-danger ui-sortable-handle">
+    <div class="box-header with-border">
+        <h3 class="box-title">Energy Alerts</h3>
+        <div class="pull-right">
+            <oj-menu-button id="select" class="pull-right" value="[[period]]"  chroming="half"
+                            style="max-width:10em">
+                <span slot='startIcon' class=' oj-fwk-icon-clock oj-fwk-icon'></span>
+                <oj-menu id="myMenu" slot="menu" style="display:none" >
+                    <oj-option value="TD">Last 24 hours</oj-option>
+                    <oj-option value="WK">Last 7 Days</oj-option>
+                    <oj-option value="MM">Last 30 Days</oj-option>
+                </oj-menu>
+            </oj-menu-button>
+        </div>
+    </div>
+    <!-- /.box-header -->
+    <div class="box-body no-padding">
+        <table class="table">
+            <thead><tr>
+                    <th>Appliance</th>
+                    <th>Time</th>
+                    <th>Energy</th>
+                    <th style="width: 40px">Severity</th>
+                </tr>
+            </thead>
+            <!--ko if:ready-->   
+            <tbody data-bind="foreach:eneralerts">
+                <tr>
+                    <td data-bind="text:alarmText" >Update software</td>
+                    <td data-bind="text:new Date(alarmTime).toLocaleDateString()" style="text-align:center;">Update software</td>
+                    <td data-bind="text:ener" style="text-align:center;">Update software</td>
+                    <td><span class="badge label" data-bind="text:severity,css:color"></span></td>
+                </tr>
+            </tbody>
+            <!--/ko-->
+        </table>
+    </div>
+    <!--        ko if:!ready()-->
+    <div class="overlay">
+        <i class="fa fa-refresh fa-spin"></i>
+    </div>
+    <!--/ko-->
+</div>

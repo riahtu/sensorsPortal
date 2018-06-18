@@ -1,0 +1,84 @@
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+<div class="box box-primary ui-sortable-handle" style="min-height:250px">
+    <div class="box-header with-border">
+        <h3 class="box-title" >Top 5 Consumers</h3>
+        <div class="box-tools pull-right">
+            <button type="button" class="btn btn-box-tool" data-bind="click: function() {
+                createChartData();
+                        document.querySelector('#modalDialog1').open();
+                      }">
+                <i class="fa fa-line-chart fa-2x"></i>
+            </button>
+        </div>
+    </div>
+    <!-- /.box-header -->
+    <div class="box-body no-padding">
+        <table class="table">
+            <!-- <thead>
+                <tr>
+                    <th>Appliance</th>
+                    <th>Energy (kWh)</th>
+                    <th>Percent</th>
+                </tr>
+            </thead> -->
+            <!--ko if:ready-->
+            <tbody data-bind="foreach: applDataArray">
+                <tr>
+                    <td data-bind="text: $index()+1">None</td>
+                    <td data-bind="text: name">0</td>
+                    <td data-bind="text: energy + ' kWh'">0</td>
+                    <td>
+                        <span class="badge label label-default" data-bind="text: percent"></span>
+                    </td>
+                </tr>
+            </tbody>
+            <!--/ko-->
+        </table>
+    </div>
+    <!--        ko if:!ready()-->
+    <div class="overlay">
+        <i class="fa fa-refresh fa-spin"></i>
+    </div>
+    <!--/ko-->
+    <oj-dialog style="display:none;width:1000px;height:500px;min-width:250px;max-width:1300px;
+               min-height:450px;max-height:800px;" id="modalDialog1" cancel-behavior='none'>
+        <div slot="header">
+
+            <oj-select-one id="catselect" style=" padding-left: 20px" value="{{selectedCat}}" options="[[categoryArray]]" on-value-changed="{{catselect}}">
+            </oj-select-one>
+
+            <oj-select-one id="typeselect" style=" padding-left: 20px" value="[[selectedType]]" options="[[catTypeArray]]" on-value-changed="{{typeselect}}">
+            </oj-select-one>
+
+            <oj-button id="okButton" class="pull-right" data-bind="click: function() {
+                  document.querySelector('#modalDialog1').close();
+                }"> Close
+            </oj-button>
+
+        </div>
+        <div slot="body">
+            <!--ko if:chartReady-->
+            <div class="oj-panel">
+
+                <div class="box-body no-padding">
+
+                    <oj-chart id="applEnerChart" type="bar" series="[[seriesValue]]" groups="[[groupsValue]]" animation-on-display="auto" animation-on-data-change="auto"
+                        time-axis-type="enabled" orientation="vertical" hover-behavior="dim" value-formats.series.tooltip-label="Appliance"
+                        value-formats.value.tooltip-label="Energy" x-axis="[[xAxisOptions]]" stack="on" style="width:100%;height:350px;">
+                    </oj-chart>
+                </div>
+            </div>
+            <!--/ko-->
+            <!--        ko if:!chartReady()-->
+            <div class="overlay" style="height: 500px;">
+                <i class="fa fa-refresh fa-spin"></i>
+            </div>
+            <!--/ko-->
+        </div>
+    </oj-dialog>
+</div>

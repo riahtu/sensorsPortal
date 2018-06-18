@@ -1,0 +1,44 @@
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+<div id="ovrdbid" class="box no-border ui-sortable-handle" style="min-height:250px">
+    <div class="box-header ">
+        <h3 class="box-title text-blue text-bold" >Energy Dashboard</h3>
+        <div class="box-tools pull-right">
+                <oj-select-one id="monsel"  value="{{selMonth}}"   options="{{monthLkp}}">
+                </oj-select-one>
+        </div>
+    </div>
+    <!-- /.box-header -->
+    <div class="box-body no-padding">
+        <div class="container-fluid" style=" padding: 5px;">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="row">
+                        <div id='epan' class="col-md-5 col-sm-6 col-xs-12" data-bind="ojModule: 'overalldb/enerplanel'">
+                        </div>
+                        <div id='econ' class="col-md-3 col-sm-6 col-xs-12" data-bind="ojModule: 'overalldb/enerconsump'">
+                        </div>
+                        <div id='topener' class="col-md-4 col-sm-6 col-xs-12" data-bind="ojModule: 'overalldb/applenergy'">
+                        </div>
+                        <div id='dayener' class="col-md-12" data-bind="ojModule: 'overalldb/dayenergy'">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--    <div class="row">
+                <div class="col-md-12">
+                    <div id='tempaler' 
+                         data-bind="ojModule: 'overalldb/tempalert'">
+                    </div>
+                    <div id='eneraler' 
+                         data-bind="ojModule: 'overalldb/eneralert'">
+                    </div>
+                </div>
+            </div>-->
+        </div>
+    </div>
+</div>

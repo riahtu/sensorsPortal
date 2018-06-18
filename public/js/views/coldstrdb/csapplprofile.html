@@ -1,0 +1,221 @@
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+
+<div class="box box-primary">
+    <div class="box-header with-border">
+        <span class="text-white box-title">Asset profile</span>
+    </div>
+    <!-- /.box-header -->
+    <div class="box-body" >
+        <!--        <div class="text-blue" data-bind="text: Name"></div>-->
+        <div class="row " style=" padding: 5px;" data-bind="with: currentProfData()">
+            <div class="col-md-3">
+                     <img class="img-responsive pad"  style=" width: 350px; height: 250px;" data-bind="attr:{'src': imgurl}"   alt="Photo">
+            </div>
+            <div class="col-md-9">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="row" style=" padding-bottom: 5px" >
+                            <div class="col-md-5">
+                                <label class="col-md-4" style=" padding-left: 0px"   for="applname" >Name</label>
+                                <div class="col-md-8" >
+                                    <input class="form-control" id="applname" type="text" data-bind="value: Name" disabled/>
+                                </div>
+                            </div>
+                            <div class="col-md-5">
+                                <label class="col-md-5"  for="ag" >Age</label>
+                                <div class="col-md-7" >
+                                    <input class="form-control" id="ag" type="text" data-bind="value: Age" disabled/>
+                                </div>
+                            </div>                            
+                        </div>
+                        <div class="row"  style=" padding-bottom: 5px">
+                            <div class="col-md-5">
+                                <label class="col-md-4"  style=" padding-left: 0px"  for="dop" >Date of Purchase</label>
+                                <div class="col-md-8" >
+                                    <input class="form-control" id="dop" type="text" data-bind="value: DOP" disabled/>
+                                </div>
+                            </div>
+                            <div class="col-md-5">
+                                <label for="mkv" class="col-md-5 control-label">Make</label>
+                                <div class="col-md-7">
+                                    <input class="form-control" id="mkv" type="text" data-bind="value: Make" disabled/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row" style=" padding-bottom: 5px">
+                            <div class="col-md-5">
+                                <label class="col-md-4" style=" padding-left: 0px" for="catv" >Category</label>
+                                <div class="col-md-8" >
+                                    <input class="form-control" id="catv" type="text" data-bind="value: Category" disabled/>
+                                </div>                        
+                            </div>
+                            <div class="col-md-5">
+                                <label for="tyv" class="col-md-5 control-label">Type</label>
+                                <div class="col-md-7">
+                                    <input class="form-control" id="tyv" type="text" data-bind="value: Type" disabled/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row" style=" padding-bottom: 5px">
+                            <div class="col-md-5">
+                                <label class="col-md-4"  style=" padding-left: 0px" for="watv" >Wattage</label>
+                                <div class="col-md-8" >
+                                    <input class="form-control" id="watv" type="text" data-bind="value: Wattage" disabled/>
+                                </div>                        
+                            </div>
+                        </div>
+                        <div class="row" style=" padding-bottom: 5px">
+                            <div class="col-md-5">
+                                <label class="col-md-4" style=" padding-left: 0px" for="tm" >Temp Monitored</label>
+                                <div class="col-md-8" >
+                                    <oj-checkboxset id="tempmoncb"  value="{{tempMonCB}}"
+                                                    disabled >
+                                        <oj-option id="tmy" value="{{Temp}}" style=" background-color: black"></oj-option>
+                                    </oj-checkboxset>
+                                </div>  
+                            </div>
+                            <div class="col-md-5">
+                                <label for="emo" class="col-md-5 control-label">Energy Monitored</label>
+                                <div class="col-md-6">
+                                    <oj-checkboxset id="tempmoncb"  value="{{energyMonCB}}"
+                                                    disabled >
+                                        <oj-option id="tmy" value="{{Energy}}"></oj-option>
+                                    </oj-checkboxset>
+                                </div>
+                            </div>
+                        </div>                
+                        <div class="row" style=" padding-bottom: 5px">
+                            <div class="col-md-5">
+                                <label class="col-md-4"  style=" padding-left: 0px" for="mdt" >Maintenance Date</label>
+                                <div class="col-md-8">
+                                    <input class="form-control" id="mdt" type="text" data-bind="value: MaintDt" disabled/>
+                                </div>                        
+                            </div>
+                        </div>
+                        <div class="row" style=" padding-bottom: 5px">
+                            <div class="col-md-5">
+                                <label class="col-md-4"  style=" padding-left: 0px" for="mdt" >Set Temperature</label>
+                                <div class="col-md-8">
+                                    <input class="form-control" id="mdt" type="text" data-bind="value: SetTemperature" disabled/>
+                                </div>                        
+                            </div>
+                        </div>                        
+                    </div>
+                </div>
+                <div class="row" style=" padding-bottom: 5px">
+                    <div class="col-md-12">
+                        <label class="col-md-2" style=" padding-left: 0px" for="itm" >Items</label>
+                        <div class="col-md-8">
+                            <!--                            <input class="form-control" id="itm" type="text" data-bind="value: Items" disabled/>-->
+                            <textarea  class="form-control" id="itm" rows="2" data-bind="value: Items" disabled></textarea>
+                        </div>                         
+                    </div>
+                </div>      
+            </div>
+
+        </div>
+        <div class="row">
+            <div class=" col-md-6">
+                <div class="box box-primary">
+                    <div class="box-header with-border">
+                        <span class="text-white box-title">Day Temperature</span>
+                    </div>
+                    <!-- /.box-header -->
+                    <div class="col-md-12" style="display: flex; justify-content:  space-around ">
+                        <div class="row">
+
+                            <div class="col-sm-3 col-xs-3" style=" padding: 10px;  " >
+                                <div >
+                                    <span class="description-text ">Minimum</span>
+                                    <h5 class="label-big label badge" style=" height: 40px; width: 60px; font-size: 17px; line-height: 35px; border-radius: 15%" data-bind="text: minTemp">8</h5>    
+                                </div>
+                            </div>
+                            <div class="col-sm-3 col-xs-3" style=" padding: 10px;  " >
+                                <div >
+                                    <span class="description-text ">Maximum </span>
+                                    <h3 class="label-big label  badge" style=" height: 40px; width: 60px; font-size: 17px; line-height: 35px; border-radius: 15%" data-bind="text: maxTemp">8</h3>    
+                                </div>
+                            </div>
+                            <div class="col-sm-3 col-xs-3" style=" padding: 10px;  " >
+                                <div >
+                                    <span class="description-text ">Average</span>
+                                    <h3 class="label-big label  badge" style=" height: 40px; width: 60px; font-size: 17px; line-height: 35px; border-radius: 15%" data-bind="text: avgTemp">8</h3>    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row"  >
+                        <div class="col-md-12">
+                            <div id='chart-container' class="col-md-12">
+                                <!--ko if:ready()-->
+
+                                <oj-chart id="lineChart"
+                                          type="line"
+                                          series="[[tempSeriesValue]]"
+                                          time-axis-type="mixedFrequency"
+                                          zoom-and-scroll="live"
+                                          style-defaults.line-type ="curved"
+                                          overview.rendered="on" overview.height="0"
+                                          y-axis.title="Temperature (°C) "
+                                          legend.rendered="off"
+                                          data-cursor="on" data-cursor-behavior="snap" 
+                                          style="width:100%;height:200px;">
+                                </oj-chart>
+                                <!--/ko-->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class=" col-md-6">
+                <div class="box box-primary">
+                    <div class="box-header with-border">
+                        <span class="text-white box-title">Notifications</span>
+                    </div>
+                    <!-- /.box-header -->
+                    <div class="box-body" >
+
+                    </div>
+                </div>
+            </div>            
+        </div>
+        <div class="row">
+            <div class="box box-primary">
+                <div class="box-header with-border">
+                    <span class="text-white box-title">Energy</span>
+                </div>
+                <!-- /.box-header -->
+                <div class="box-body" >
+                    <div class="col-md-12">
+                        <!--ko if:chartReady-->
+                        <oj-chart id="applEnerChart" 
+                                  type="bar" 
+                                  series="[[seriesValue]]" 
+                                  groups="[[groupsValue]]" 
+                                  animation-on-display="auto" 
+                                  animation-on-data-change="auto"
+                                  time-axis-type="enabled" 
+                                  orientation="vertical" 
+                                  hover-behavior="dim" 
+                                  legend.rendered="off"
+                                  value-formats.series.tooltip-label="Appliance"
+                                  value-formats.value.tooltip-label="Energy" 
+                                  style="width:100%;height:350px;">
+                        </oj-chart>
+                        <!--/ko-->
+                        <!--        ko if:!chartReady()-->
+                        <div class="overlay" style="height: 500px;">
+                            <i class="fa fa-refresh fa-spin"></i>
+                        </div>
+                        <!--/ko-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

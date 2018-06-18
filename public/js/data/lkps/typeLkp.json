@@ -1,0 +1,18 @@
+[
+    {
+        "value": "TE",
+        "label": "Total Energy"
+    },
+    {
+        "value": "AE",
+        "label": "Applicance Energy"
+    },
+     {
+        "value": "AL",
+        "label": "Alarms"
+    },
+    {
+        "value": "EV",
+        "label": "Events"
+    }
+]

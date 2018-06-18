@@ -1,0 +1,72 @@
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+<div class="box box-primary">
+    <div class="box-header with-border">
+        <span class="text-white box-title">Alarms</span>
+    </div>
+    <!-- /.box-header -->
+    <div class="box-body">
+        <div class="oj-flex oj-flex-items-pad  " style=" padding: 5px;">
+            <div class="oj-flex-item  oj-sm-6 oj-lg-3" >
+                <oj-label  for="dsel">Device</oj-label>
+                <oj-select-one id="dsel"  value="{{deviceId}}"   options="{{devicesLkp}}">
+                </oj-select-one>
+            </div>
+            <div class="oj-flex-item oj-sm-6 oj-lg-3" >
+                <oj-label for="frdt" >From Date</oj-label>
+                <oj-input-date-time id="frdt" value='{{fromDt}}' converter= '{
+                                    "type":"datetime", 
+                                    "options": {"pattern": " dd/MM/y, h:mm:ss a"}}'></oj-input-date-time>
+            </div>
+            <div class="oj-flex-item oj-sm-6 oj-lg-3" >
+                <oj-label for="todt" >To Date</oj-label>
+                <oj-input-date-time id="todt" value='{{toDt}}'  converter= '{
+                                    "type":"datetime", 
+                                    "options": {"pattern": " dd/MM/y, h:mm:ss a"}}'"></oj-input-date-time>
+            </div>
+            <div class="oj-flex-item oj-sm-6 oj-lg-3 pad-top-25" >
+                <div class="btn-group">
+                    <button type="button" class="btn btn-primary" data-bind="click: filterAlarm"><i class="fa fa-search"></i></button>                    
+                    <div class="spacer"></div>
+                    <button type="button" class="btn btn-warning" data-bind="click: downloadFile"><i class="fa fa-download"></i></button>
+                </div>
+            </div>                            
+        </div>
+        <div class="oj-xl-12 oj-lg-12 oj-md-12 oj-flex-item oj-flex-items-pad oj-panel">
+            <!--ko if:ready-->            
+            <div class="box-body no-padding">
+                <table class="table table-bordered table-striped dataTable table-condensed">
+                    <thead class="bg-primary text-white align" >
+                    <th style="text-align:center;">Date</th>
+                    <th style="text-align:center;">Time</th>
+                    <th style="text-align:center;">Alarm</th>                        
+                    </thead>
+                    <!--ko if:ready-->        
+                    <tbody data-bind="foreach:dataObservableArray">
+                        <tr>
+                            <td data-bind="text:new Date(ts).toLocaleDateString()" style="text-align:center;"></td>
+                            <td data-bind="text:new Date(ts).toLocaleTimeString()" style="text-align:center;"></td>
+                            <td data-bind="text:descr" style="text-align:center;"></td>                            
+                            
+                        </tr>     
+                    </tbody>
+                    <!--/ko-->
+                </table>
+            </div>            
+            <!--/ko-->  
+            <!--        ko if:!ready()-->
+            <div class="overlay" style="height: 500px;">
+                <i class="fa fa-refresh fa-spin"></i>
+            </div>
+            <!--/ko-->  
+        </div>  
+    </div>
+    <!-- /.box-body -->
+    <div class="box-footer">
+        <i> <span class="text-info">Only top 300 rows matching the criteria will be fetched</span></i>
+    </div>    
+</div>

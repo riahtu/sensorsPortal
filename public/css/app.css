@@ -1,0 +1,138 @@
+.bosch{
+    width:210px;
+    height:40px;
+    display: flex;
+    float: left;
+    align-items: center; 
+    font-size:  large;
+    background:url("images/Bosch-brand-small.svg") no-repeat;
+
+}
+
+.oj-web-applayout-header-title{
+    color:#333;
+    text-align:left;
+    font-size:24px;
+    font-weight:normal;
+    margin-top:15px;
+    padding:9px;
+    font-family: palatino
+}
+
+.bosch_title{
+    color:#333;
+    font: 22px;
+}
+
+.mean-Data {
+    margin-top: 0;
+    margin-bottom: 0px;
+    font-size: 40px;
+    font-weight: 300;
+    text-align: center;
+}
+
+.info-align-center{
+    text-align: center;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+
+.pad-top-25{
+    padding-top: 25px;
+}
+
+.spacer{
+    width:1px;
+    height:auto;
+    display:inline-block;
+}
+
+.modal-backdrop {
+    z-index: auto;
+}
+
+.modal {
+}
+.vertical-alignment-helper {
+    display:table;
+    height: 100%;
+    width: 100%;
+}
+.vertical-align-center {
+    /* To center vertically */
+    display: table-cell;
+    vertical-align: middle;
+}
+.modal-content {
+    /* Bootstrap sets the size of the modal in the modal-dialog class, we need to inherit it */
+    width:inherit;
+    height:inherit;
+    /* To center horizontally */
+    margin: 0 auto;
+}
+
+
+.text-white {
+    color: #ffffff
+}
+
+.fa-15x{font-size:1.5em}
+
+#chatbot {
+    border: 1px solid #333;
+    float: left;
+    height: 100%;
+    position: relative;
+    width: 100%;
+}
+
+
+
+.btn-app {
+    border-radius: 3px;
+    position: relative;
+    padding: 15px 5px;
+    margin: 0 0 10px 10px;
+    min-width: 120px;
+    height: 90px;
+    text-align: center;
+    color: #666;
+    border: 1px solid #ddd;
+    background-color: #f4f4f4;
+    font-size: 16px;
+}
+
+
+
+.btn-app-off {
+    border-radius: 3px;
+    position: relative;
+    padding: 15px 5px;
+    margin: 0 0 10px 10px;
+    min-width: 120px;
+    height: 90px;
+    text-align: center;
+   color: white;
+    border: 1px solid #ddd;
+    background-color: red;
+    font-size: 16px;
+}
+
+
+.btn-app-on {
+    border-radius: 3px;
+    position: relative;
+    padding: 15px 5px;
+    margin: 0 0 10px 10px;
+    min-width: 120px;
+    height: 90px;
+    text-align: center;
+   color: white;
+    border: 1px solid #ddd;
+    background-color: green;
+    font-size: 16px;
+}

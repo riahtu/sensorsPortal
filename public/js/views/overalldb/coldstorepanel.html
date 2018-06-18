@@ -1,0 +1,99 @@
+<div id="cspanel" class="box ui-sortable-handle" >
+    <!-- /.box-header -->
+    <div class="box-body ">
+        <div class="col-sm-4 col-xs-4">
+            <div class="box box-primary ui-sortable-handle" >
+                <div class="box-header with-border">
+                    <h3 class="box-title">Cold Storage</h3>
+                </div>
+                <div class="row  ">
+                    <div class="col-sm-12 col-md-12 col-lg-12" style=" padding: 10px;  display: flex; justify-content:  space-around ">
+                        <div class="col-sm-4 col-xs-4 ">           
+                            <div class="small-box bg-green-gradient" style=" margin-bottom: 0px; box-shadow: 0 0px 0px rgba(0, 0, 0, 0)">
+                                <div class="inner">
+                                    <h3   style=" color: white">31</h3>
+                                    <h5 style=" color: white">APPLIANCES</h5>
+                                </div>
+                                <div class="icon">
+                                    <i class="fa fa-snowflake-o"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-8 col-xs-8" style=" padding: 10px;  " >
+                            <div class="row">
+                                <div class="col-sm-3 col-xs-3" style=" padding: 10px;  " >
+                                    <div class=" info-align-center">
+                                        <h5 class="label-big label label-success badge" data-bind="text:meteredAppl">8</h5>    
+                                        <span class="description-text ">Online</span>
+                                    </div>
+                                </div>
+                                <div class="col-sm-3 col-xs-3" style=" padding: 10px;  " >
+                                    <div class=" info-align-center">
+                                        <h3 class="label-big label label-danger badge" data-bind="text: offAppl">8</h3>    
+                                        <span class="description-text ">Offline</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /.info-box-content -->
+                    </div>
+                </div>
+                <div class=" row">
+                    <div class="col-sm-12 col-md-12 col-lg-12" style=" padding: 10px;  display: flex; justify-content:  space-around ">
+                        <a class="btn btn-app btn-facebook" data-bind="click: loadColdStrDB">
+                            <i class="fa fa-stethoscope"></i> Health
+                        </a>
+                        <a class="btn btn-app btn-facebook" data-bind="click: loadEnerAnalyticsPage">
+                            <i class="fa fa-line-chart"></i> Analytics
+                        </a>
+                        <a class="btn btn-app btn-facebook" data-bind="click: loadCompEvents">
+                            <i class="fa fa-cog"></i> Compressor
+                        </a>
+                        <a class="btn btn-app btn-facebook" data-bind="click: loadApplEvents">
+                            <i class="fa fa-exchange"></i> Events
+                        </a>                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-8 col-xs-8">
+            <div class="box box-primary ui-sortable-handle" >
+                <div class="box-header with-border">
+                    <h3 class="box-title">Appliance Temperature</h3>
+                    <div class="pull-right">
+                        <button type="button" class="btn btn-box-tool" data-bind="click: function() {
+                refreshTemp();
+                      }">
+                            <i class="fa fa-refresh fa-2x"></i>
+                        </button>
+                        <button type="button" class="btn btn-box-tool" data-bind="click: function() {
+                        loadTempDetChart();
+                      }">
+                            <i class="fa fa-line-chart fa-2x"></i>
+                        </button>                        
+                    </div>
+                </div>
+                <!-- /.box-header -->
+                <div id="tempscroll" class="box-body no-padding" >
+                    <table class="table">
+                        <!--ko if:ready-->
+                        <tbody data-bind="foreach: csTempData">
+                            <tr>
+                                <td data-bind="text: $index()+1">None</td>
+                                <td data-bind="text: name">0</td>
+                                <td data-bind="text: temp">0</td>
+                                <td data-bind=" css: css"></td>
+                            </tr>
+                        </tbody>
+                        <!--/ko-->
+                    </table>
+
+                    <!--        ko if:!ready()-->
+                    <div class="overlay">
+                        <i class="fa fa-refresh fa-spin"></i>
+                    </div>
+                    <!--/ko-->
+                </div>
+            </div>
+        </div>
+    </div>

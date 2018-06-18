@@ -1,0 +1,407 @@
+<style>
+    .vl {
+        border-left: 4px solid #1976D2;
+        height: 60px;
+    }
+    .v3 {
+        border-left: 4px solid  #0D47A1;
+        height: 60px;
+    }
+    .v4 {
+        border-left: 4px solid  #F9A825;
+        height: 60px;
+    }
+    .v5 {
+        border-left: 4px solid #4CAF50;
+        height: 60px;
+    }
+    .v6 {
+        border-left: 4px solid #e57373;
+        height: 60px;
+    }
+
+    .v2 {
+        border-left: 0.1px solid #ECEFF1;
+        height: 70px;
+    }
+    .dot {
+        height: 10px;
+        width: 10px;
+        background-color: green;
+        border-radius: 50%;
+        display: inline-block;
+    }
+    .edge{
+        border-radius: 0px ;
+
+    }
+    .colPad {   margin-left: 2px;  }
+    .colPadding {    border-left: 10px solid white;
+    }
+    .marginRow{
+        margin-bottom:0px !important; 
+        margin-top: 0px !important; 
+    }
+    .marginRowLittle{
+        margin-bottom:10px !important; 
+        margin-top: 10px !important; 
+    }
+
+</style>
+
+
+<div class="col-md-12 marginRow">
+    <div class="box no-border no-padding no-shadow marginRow">
+
+        <!-- /.box-header -->
+        <div class="box-body marginRow">
+            <div class="vl col-md-2">
+                <span style="font-size: 32px; color: #607D8B">25</span>
+                <div style="font-size: 12px; color: #607D8B">Total Contract Count</div>
+            </div> 
+            <div class="v3 col-md-1">
+                <span style="font-size: 32px ; color: #607D8B">05</span>
+                <div style="font-size: 12px; color: #607D8B">New</div>
+            </div> 
+            <div class="v4 col-md-1">
+                <span style="font-size: 32px; color: #607D8B">02</span>
+                <div style="font-size: 12px ; color: #607D8B">In Progress</div>
+            </div> 
+            <div class="v5 col-md-1">
+                <span style="font-size: 32px ; color: #607D8B">25</span>
+                <div style="font-size: 12px; color: #607D8B">Completed</div>
+            </div> 
+            <div class="v6 col-md-1">
+                <span style="font-size: 32px; color: #607D8B">05</span>
+                <div style="font-size: 12px ; color: #607D8B">Failed</div>
+            </div> 
+        </div>
+    </div>
+</div>
+
+
+<div class="col-md-12 no-padding marginRow colPad">
+    <div class="box no-border no-padding no-shadow marginRow edge" style="background-color:#EEEEEE">
+
+        <!-- /.box-header -->
+        <div class="box-body">
+            <div class="row ">
+                <div class="col-md-3">
+
+                    <div id="background" class="box no-border  no-shadow no-padding" style="height:400px">
+                        <br><br>
+                        <div  class="box-body" >
+
+                            <img id="image" src="css/images/truck.png" alt="" style="
+                                 -webkit-transform: scaleX(-1);
+                                 transform: scaleX(-1)   ; width:110%;height: 130% " class="no-padding" />
+                            <div class="text-center  text-primary">
+                                <h6 class="text-blue text-bold">Contract Number</h6>
+                                <h2 class="text-blue text-bold">23112837</h2>
+                            </div>
+                        </div>
+                        <div class="box-footer  " style="background-color: #FAFAFA">
+
+                            <div class=" col-md-5 " >
+                                <h6 style="color: #607D8B">Tracking Id</h6>
+                                <h2 style="color: #607D8B">23112837</h2>
+                            </div>
+                            <div class="col-md-1">
+                                <div class="  v2  " >
+                                </div> 
+                            </div>
+                            <div class=" col-md-5  text-gray">
+                                <span class="pull-right"> <span class="dot"></span></span>
+                                <h6 style="color: #607D8B">Status</h6>
+                                <h2 style="color: #607D8B">Working</h2>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+
+
+                <div class="col-xs-7 col-sm-7 col-md-7 col-lg-7 " >
+                    <div  data-bind="ojModule:mapHome"></div>
+                </div>
+                <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 ">
+                    <div class="box box-solid no-border no-shadow edge no-padding " >
+                        <div class="box-header "  style="background-color: #f44336">
+                            <h2 class="box-title text-white">Alert</h2>
+
+                        </div>
+                        <!-- /.box-header -->
+                        <div id='alertBox' class="box-body" style="background-color: #FAFAFA">
+                            <table class="table table-condensed">
+                                <!--thead><tr>
+                                      
+                                        <th>Alarm Text</th>
+                                        <th>Time</th>
+                                        <th style="width: 40px">Severity</th>
+                                    </tr>
+                                </thead-->
+                                <tbody data-bind="foreach: new Array(5)">
+                                    <tr>
+
+                                        <td>
+                                            <div  >
+                                                <h4 class="text-red">Shock Detected</h4>
+
+                                                <div> Description of the alert . Temprature limit reached </div>
+
+                                                <div class="text-bold " data-bind="text: new Date().toLocaleString()"></div>
+                                            </div>
+                                        </td>
+
+                                        <!--td data-bind="text:DESCRIPTION">Mains ON</td>
+                                        <td data-bind="text:FROM_TIMESTAMP">May 11th, 1:24 am</td>
+                                        <td><span class="badge label" data-bind="text:SEVERITY,css:$parent.getSevColor(SEVERITY)">Low</span></td-->
+                                    </tr>
+                                </tbody></table>
+                        </div>
+                        <!-- /.box-body -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class=" box no-border no-padding no-shadow col-xs-12 col-sm-12 col-md-12 col-lg-12 marginRowLittle" style="background-color: #E1F5FE">
+
+
+        <!-- /.col -->
+        <div class="col-md-5 " >
+            <div class="box-body  " style="background-color: #E1F5FE">
+                <div class="box-header">
+                    <h2 style="; color: #283593">Container Conditions</h2>
+                </div>
+                <div class="oj-flex">
+                    <div class="oj-flex-item no-padding colPad">
+                        <div class="box  edge box-solid " style="background-color:#0288D1">
+
+                            <!-- /.box-header -->
+                            <div class="box-body text-center">
+                                <div style="display:inline;width:80px;height:80px;">
+                                    <input class="knob" id="tempGuage" data-bind="textInput:parseInt(temp())" data-skin="tron" data-min="0" data-max="80" data-bgColor="#29B6F6"
+                                           data-thickness="0.15" data-lineCap="round" data-anglearc="250" data-angleoffset="-125" data-width="90" data-height="90"  data-fgcolor="#F9A825"
+                                           style="width: 39px; height: 20px; position: absolute; vertical-align: middle; margin-top: 30px; margin-left: -69px; 
+                                           border: 0px none; background: rgba(0, 0, 0, 0) none repeat scroll 0% 0%; font: normal normal bold normal 18px Arial;
+                                           text-align: center; color: rgb(0, 166, 90); padding: 0px;" type="text">
+                                </div>
+                                <h6 class="box-title  text-white text-center">Temperature(C)</h6>
+
+                            </div>
+
+                        </div>
+                        <!-- /.box -->
+                    </div>
+
+                    <div class="oj-flex-item no-padding colPad">
+                        <div class="box edge   box-solid " style="background-color: #0288D1">
+
+
+                            <div class="box-body text-center">
+                                <div style="display:inline;width:80px;height:80px;">
+                                    <input class="knob" id="rhGuage"  data-bind="textInput:parseInt(rh())" data-skin="tron" data-min="0" 
+                                           data-max="80"  data-thickness="0.15" data-lineCap="round" data-anglearc="250" data-angleoffset="-125" data-width="90"
+                                           data-height="90"  data-fgcolor="#F9A825" data-bgColor="#29B6F6" style="width: 39px; height: 20px; position: absolute;
+                                           vertical-align: middle; margin-top: 30px; margin-left: -69px; border: 0px none; 
+                                           background: rgba(0, 0, 0, 0) none repeat scroll 0% 0%; font: normal normal bold normal 18px Arial; text-align: center;
+                                           color: rgb(0, 166, 90); padding: 0px;" type="text">
+                                </div>
+                                <h6 class="box-title text-white text-center">Humidity(%)</h6>
+                            </div>
+                            <!-- /.box-body -->
+                        </div>
+                        <!-- /.box -->
+                    </div>
+
+                    <div class="oj-flex-item  no-padding colPad">
+                        <div class="box edge  box-solid" style="background-color: #0288D1">
+
+
+                            <div class="box-body text-center">
+                                <div style="display:inline;width:80px;height:80px;">
+                                    <input class="knob" id="pressGuage"   data-bind="textInput:parseInt(press())" data-skin="tron" data-min="0" data-max="80" 
+                                           data-thickness="0.15" data-lineCap="round" data-anglearc="250" data-angleoffset="-125" data-width="90" data-height="90"  data-fgcolor="#F9A825" data-bgColor="#29B6F6"
+                                           style="width: 39px; height: 20px; position: absolute; vertical-align: middle; margin-top: 30px; margin-left: -69px; border: 0px none;
+                                           background: rgba(0, 0, 0, 0) none repeat scroll 0% 0%; font: normal normal bold normal 18px Arial; text-align: center; color: rgb(0, 166, 90); padding: 0px;" type="text">
+                                </div>
+                                <h6 class="box-title text-white text-center">Pressure(kPa)</h6>
+                            </div>
+                            <!-- /.box-body -->
+                        </div>
+                        <!-- /.box -->
+                    </div>
+
+
+                    <div class="oj-flex-item no-padding colPad">
+                        <div class="box edge box-solid" style="background-color: #0288D1">
+
+
+                            <div class="box-body text-center">
+                                <div style="display:inline;width:80px;height:80px;">
+                                    <input class="knob" id="lumGuage" data-bind="textInput:parseInt(lum())" data-skin="tron" data-min=0 data-max=80  data-thickness="0.15" data-lineCap="round"
+                                           data-anglearc="250" data-angleoffset="-125" data-width="90" data-height="90" data-fgcolor="#F9A825" data-bgColor="#29B6F6"  
+                                           style="width: 39px; height: 20px;
+                                           position: absolute; vertical-align: middle; margin-top: 30px; margin-left: -69px; border: 0px none;
+                                           background: rgba(0, 0, 0, 0) none repeat scroll 0% 0%; font: normal normal bold normal 18px Arial; text-align: center; 
+                                           color: rgb(255,140,0); padding: 0px;" type="text">
+                                </div>
+                                <h6 class="box-title text-white text-center">Luminosity(lux)</h6>
+                            </div>
+                            <!-- /.box-body -->
+                        </div>
+                        <!-- /.box -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- /.col -->
+        <div class="col-md-7 colPadding center-block" >
+            <div class="box-body   " style="background-color: #E1F5FE">
+                <div class="box-header">
+                    <h2 style="; color: #283593; padding-left: 50px " >Vehicle Conditions</h2>
+                </div>
+                <div class="col-md-1 "></div>
+                <div class="col-md-2 no-padding colPad">
+                    <div class="box box-solid edge" style="background-color: #0277BD">
+
+                        <!-- /.box-header -->
+                        <div class="box-body text-center">
+                            <div style="display:inline;width:80px;height:80px;">
+                                <input class="knob" id="tempGuage" data-bind="textInput:parseInt(temp())" 
+                                       data-skin="tron" data-min="0" data-max="80"  data-thickness="0.15" data-lineCap="round" data-anglearc="250" 
+                                       data-angleoffset="-125" data-width="90" data-height="90" data-fgcolor="#FBC02D" data-bgColor="#29B6F6"
+                                       style="width: 39px; height: 20px; position: absolute; vertical-align: middle; margin-top: 30px; 
+                                       margin-left: -69px; border: 0px none; background: rgba(0, 0, 0, 0) none repeat scroll 0% 0%;
+                                       font: normal normal bold normal 18px Arial; text-align: center; color: rgb(0, 166, 90); padding: 0px;" type="text">
+                            </div>
+                            <h6 class="box-title text-white text-center">Oil Level</h6>
+
+                        </div>
+
+                    </div>
+                    <!-- /.box -->
+                </div>
+
+                <div class="col-md-2 no-padding colPad">
+                    <div class="box box-solid edge" style="background-color: #0277BD">
+
+
+                        <div class="box-body  text-center">
+                            <div style="display:inline;width:80px;height:80px;">
+                                <input class="knob" id="rhGuage"  data-bind="textInput:parseInt(rh())" data-skin="tron" data-min="0"
+                                       data-max="80"  data-thickness="0.15" data-lineCap="round" data-anglearc="250" data-angleoffset="-125" data-width="90"
+                                       data-height="90" data-fgcolor="#FBC02D" data-bgColor="#29B6F6" style="width: 39px; height: 20px; position: absolute;
+                                       vertical-align: middle; margin-top: 30px; margin-left: -69px; border: 0px none; background: rgba(0, 0, 0, 0) none repeat scroll 0% 0%;
+                                       font: normal normal bold normal 18px Arial; text-align: center; color: rgb(0, 166, 90); padding: 0px;" type="text">
+                            </div>
+                            <h6 class="box-title text-white text-center">Accelerometer</h6>
+                        </div>
+                        <!-- /.box-body -->
+                    </div>
+                    <!-- /.box -->
+                </div>
+
+                <div class="col-md-2 no-padding colPad">
+                    <div class="box box-solid edge" style="background-color: #0277BD">
+
+
+                        <div class="box-body  text-center">
+                            <div style="display:inline;width:80px;height:80px;">
+                                <input class="knob" id="pressGuage"   data-bind="textInput:parseInt(press())" data-skin="tron"
+                                       data-min="0" data-max="120"  data-thickness="0.15" data-lineCap="round" data-anglearc="250" data-angleoffset="-125" 
+                                       data-width="90" data-height="90" data-fgcolor="#FBC02D" data-bgColor="#29B6F6" style="width: 39px; height: 20px; position: absolute; 
+                                       vertical-align: middle; margin-top: 30px; margin-left: -69px; border: 0px none; background: rgba(0, 0, 0, 0) none repeat scroll 0% 0%;
+                                       font: normal normal bold normal 18px Arial; text-align: center; color: rgb(0, 166, 90); padding: 0px;" type="text">
+                            </div>
+                            <h6 class="box-title text-white text-center">Gyroscope</h6>
+                        </div>
+                        <!-- /.box-body -->
+                    </div>
+                    <!-- /.box -->
+                </div>
+
+
+                <div class="col-md-2 no-padding colPad">
+                    <div class="box box-solid edge" style="background-color: #0277BD">
+
+
+                        <div class="box-body  text-center">
+                            <div style="display:inline;width:80px;height:80px;">
+                                <input class="knob" id="lumGuage" data-bind="textInput:parseInt(lum())" data-skin="tron" data-min=0 data-max=500 
+                                       data-thickness="0.15" data-lineCap="round" data-anglearc="250" data-angleoffset="-125" data-width="90" data-height="90" 
+                                       data-fgcolor="#FBC02D" data-bgColor="#29B6F6" style="width: 64px; height: 40px; position: absolute; vertical-align: middle; margin-top: 40px;
+                                       margin-left: -92px; border: 0px none; background: rgba(0, 0, 0, 0) none repeat scroll 0% 0%; font: normal normal bold normal 24px Arial; text-align: center; color: rgb(255,140,0); padding: 0px;" type="text">
+                            </div>
+                            <h6 class="box-title text-white text-center">Battery Level</h6>
+                        </div>
+                        <!-- /.box-body -->
+                    </div>
+                    <!-- /.box -->
+                </div>
+                <div class="col-md-2 no-padding colPad">
+                    <div class="box box-solid edge" style="background-color: #0277BD">
+
+
+                        <div class="box-body  text-center">
+                            <div style="display:inline;width:80px;height:80px;">
+                                <input class="knob" id="lumGuage" data-bind="textInput:parseInt(lum())" data-skin="tron" data-min=0 data-max=500 
+                                       data-thickness="0.15" data-lineCap="round" data-anglearc="250" data-angleoffset="-125" data-width="90" data-height="90" data-fgcolor="#FBC02D" data-bgColor="#29B6F6"
+                                       style="width: 64px; height: 40px; position: absolute; vertical-align: middle; margin-top: 40px; margin-left: -92px;
+                                       border: 0px none; background: rgba(0, 0, 0, 0) none repeat scroll 0% 0%; font: normal normal bold normal 24px Arial; 
+                                       text-align: center; color: rgb(255,140,0); padding: 0px;" type="text">
+                            </div>
+                            <h6 class="box-title text-white text-center">Engine Temp</h6>
+                        </div>
+                        <!-- /.box-body -->
+                    </div>
+                    <!-- /.box -->
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+    </div>
+    <!-- /.box -->
+
+</div>
+
+<div class="oj-flex col-md-12">
+    <div class="oj-flex-item  ">
+        <div class="box-header"><h2 style="color: #607D8B">Vibration Chart</h2>
+            </div>
+
+        <canvas id="mycanvas" width="400" height="300" style="width: 450px; height: 300px;"></canvas>
+    </div>
+
+
+    <div class="oj-flex-item  no-padding ">
+        <div class="box-header"><h2 style="color: #607D8B"> Gyroscope Chart </h2>
+        </div>
+        <canvas id="GyrCanvas" width="400" height="300" style="width: 450px; height: 300px;"></canvas>
+
+
+    </div>
+
+
+    <div class="oj-flex-item no-padding ">
+        <div class="box-header"><h2 style="color: #607D8B"> Luminosity Chart</h2>
+         </div>
+        <canvas id="LuxCanvas" width="400" height="300" style="width: 450px; height: 300px;"></canvas>
+
+
+    </div>
+</div>

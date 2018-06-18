@@ -1,0 +1,94 @@
+<div class="box box-primary">
+
+    <div class="box-body">
+        <div class="row">
+            <div class="col-md-3">
+                <oj-label for="typselect">Type</oj-label>
+                <oj-select-one id="typselect" style=" padding-left: 20px" value="{{selectedType}}" options="[[typeArray]]" on-value-changed="{{typeselect}}">
+                </oj-select-one>
+            </div>
+            <div class="col-md-3">
+                <oj-label for="applselect">Appliance</oj-label>
+                <oj-select-one id="applselect" style=" padding-left: 20px" value="{{selectedAppl}}" options="[[typeApplArray]]" >
+                </oj-select-one>
+            </div>
+            <div class="col-md-3">
+                <oj-label for="dateSelect">Date</oj-label>
+                <oj-input-date id="date2" value="{{date}}" name="date2"
+                               on-value-changed="{{optionChange}}"
+                               converter= '{
+                               "type":"datetime",
+                               "options": {"year": "numeric", "month": "long"}}'> </oj-input-date>
+            </div>
+            <div class="col-md-2 pad-top-25">
+                <button class='btn btn-primary' data-bind="click:loadData">Load</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 col-sm-12" style=" padding: 0px 0px 20px;">
+                <p class="text-center">
+                    <strong>Energy Chart</strong>
+                </p>
+                <!--ko if:chartReady-->    
+                <div id="energyPlot"></div>
+                <!--/ko-->
+                <!--        ko if:!chartReady()-->
+                <div class="overlay" style="height: 500px;">
+                    <i class="fa fa-refresh fa-spin"></i>
+                </div>
+                <!--/ko-->   
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12 col-sm-12" style=" padding: 0px 0px 20px;">
+                <p class="text-center">
+                    <strong>Temp Chart</strong>
+                </p>
+                <!--ko if:chartReady2-->    
+                <div id="tempPlot"></div>
+                <!--/ko-->
+                <!--        ko if:!chartReady2()-->
+                <div class="overlay" style="height: 500px;">
+                    <i class="fa fa-refresh fa-spin"></i>
+                </div>
+                <!--/ko-->   
+            </div>
+        </div>
+        
+         <div class="row">
+            <div class="col-md-12 col-sm-12" style=" padding: 0px 0px 20px;">
+                <p class="text-center">
+                    <strong>Cycles Chart</strong>
+                </p>
+                <!--ko if:chartReady1-->    
+                <div id="cyclesPlot"></div>
+                <!--/ko-->
+                <!--        ko if:!chartReady1()-->
+                <div class="overlay" style="height: 500px;">
+                    <i class="fa fa-refresh fa-spin"></i>
+                </div>
+                <!--/ko-->   
+            </div>
+        </div>
+
+       
+        
+         <div class="row">
+            <div class="col-md-12 col-sm-12" style=" padding: 0px 0px 20px;">
+                <p class="text-center">
+                    <strong>onTime Chart</strong>
+                </p>
+                <!--ko if:chartReady1-->    
+                <div id="onTimePlot"></div>
+                <!--/ko-->
+                <!--        ko if:!chartReady1()-->
+                <div class="overlay" style="height: 500px;">
+                    <i class="fa fa-refresh fa-spin"></i>
+                </div>
+                <!--/ko-->   
+            </div>
+        </div>
+    </div>
+</div>
+

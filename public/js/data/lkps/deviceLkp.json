@@ -1,0 +1,18 @@
+[
+    {
+        "value": "01010001",
+        "label": "Food & Veg Section"
+    },
+    {
+        "value": "01010002",
+        "label": "Bakery Hot & Cold"
+    },
+    {
+        "value": "01010003",
+        "label": "Bakery Appliances"
+    },
+    {
+        "value": "01010004",
+        "label": "Cold Room Appliances"
+    }
+]

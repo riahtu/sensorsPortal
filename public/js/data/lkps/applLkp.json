@@ -1,0 +1,457 @@
+[
+    {
+        "deviceId": "01010001",
+        "label": "ODC - Butter & Better",
+        "value": "010100821601"
+    },
+    {
+        "deviceId": "01010001",
+        "label": "ODC - Flavor Milk ",
+        "value": "0101001640801"
+    },
+    {
+        "deviceId": "01010001",
+        "label": "ODC - Cup Curd & Yoghurt",
+        "value": "0101002050401"
+    },
+    {
+        "deviceId": "01010001",
+        "label": "ODC - Cheese Block & Fresh Diary",
+        "value": "010100821701"
+    },
+    {
+        "deviceId": "01010001",
+        "label": "ODC - Cheese Slice & Paneer",
+        "value": "0101000002501"
+    },
+    {
+        "deviceId": "01010001",
+        "label": "Freezer - Veg  Island display 1",
+        "value": "0102012048701"
+    },
+    {
+        "deviceId": "01010001",
+        "label": "Freezer - Veg  Island display 2",
+        "value": "0102012048702"
+    },
+    {
+        "deviceId": "01010001",
+        "label": "Freezer - Veg  Island display 3",
+        "value": "0102012048703"
+    },
+    {
+        "deviceId": "01010001",
+        "label": "Freezer - Veg  Island display 4",
+        "value": "0102012048704"
+    },
+    {
+        "deviceId": "01010001",
+        "label": "Freezer - Veg  Island display 5",
+        "value": "0102012048705"
+    },
+    {
+        "deviceId": "01010001",
+        "label": "Freezer - Non-Veg  Island display  6",
+        "value": "0102012048706"
+    },
+    {
+        "deviceId": "01010001",
+        "label": "Freezer - Non-Veg  Island display  7",
+        "value": "0102012048707"
+    },
+    {
+        "deviceId": "01010001",
+        "label": "Freezer - Non-Veg  Island display  8",
+        "value": "0102012048708"
+    },
+    {
+        "deviceId": "01010001",
+        "label": "Refrigerator Cola",
+        "value": "0103022176701"
+    },
+    {
+        "deviceId": "01010001",
+        "label": "Refrigerator Pepsi",
+        "value": "0103032202301"
+    },
+    {
+        "deviceId": "01010001",
+        "label": "Cooler Unknown 1",
+        "value": "010600000001"
+    },
+    {
+        "deviceId": "01010001",
+        "label": "Heater Unknown 1",
+        "value": "010400000002"
+    },
+    {
+        "deviceId": "01010002",
+        "label": "Heater Bakery Non-Veg",
+        "value": "020400000101"
+    },
+    {
+        "deviceId": "01010002",
+        "label": "Heater Bakery Veg",
+        "value": "0204002048301"
+    },
+    {
+        "deviceId": "01010002",
+        "label": "Chiller Bakery Veg",
+        "value": "020104820801"
+    },
+    {
+        "deviceId": "01010002",
+        "label": "Chiller Bakery Non Veg-Cake",
+        "value": "0201042050501"
+    },
+    {
+        "deviceId": "01010002",
+        "label": "Chiller Bakery Non Veg Pastry",
+        "value": "020100050901"
+    },
+    {
+        "deviceId": "01010002",
+        "label": "Chiller Bakery Horizontal",
+        "value": "0201001331601"
+    },
+    {
+        "deviceId": "01010002",
+        "label": "Microwave Oven-veg",
+        "value": "020506001801"
+    },
+    {
+        "deviceId": "01010002",
+        "label": "Microwave Oven-Non veg",
+        "value": "020506001802"
+    },
+    {
+        "deviceId": "01010002",
+        "label": "Refrigerator Vertical",
+        "value": "0203023072901"
+    },
+    {
+        "deviceId": "01010002",
+        "label": "Cooler Unknown 1",
+        "value": "020600000001"
+    },
+    {
+        "deviceId": "01010002",
+        "label": "Cooler Unknown 2",
+        "value": "020600000002"
+    },
+    {
+        "deviceId": "01010002",
+        "label": "Cooler Unknown 3",
+        "value": "020600000003"
+    },
+    {
+        "deviceId": "01010003",
+        "value": "0301001639101",
+        "label": "2 door chiller"
+    },
+    {
+        "deviceId": "01010003",
+        "value": "030100-2661701",
+        "label": "4 door chiller 2"
+    },
+    {
+        "deviceId": "01010003",
+        "value": "030100-2840901",
+        "label": "4 door chiller 1"
+    },
+    {
+        "deviceId": "01010003",
+        "value": "030400001809",
+        "label": "Unknown Heater 7"
+    },
+    {
+        "deviceId": "01010003",
+        "value": "0304001230904",
+        "label": "Unknown Heater 2"
+    },
+    {
+        "deviceId": "01010003",
+        "value": "0304001769608",
+        "label": "Unknown Heater 6"
+    },
+    {
+        "deviceId": "01010003",
+        "value": "0304001794106",
+        "label": "Unknown Heater 4"
+    },
+    {
+        "deviceId": "01010003",
+        "value": "0304001846707",
+        "label": "Unknown Heater 5"
+    },
+    {
+        "deviceId": "01010003",
+        "value": "030400184716",
+        "label": "Unknown Heater 8"
+    },
+    {
+        "deviceId": "01010003",
+        "value": "030400-2865505",
+        "label": "Unknown Heater 3"
+    },
+    {
+        "deviceId": "01010003",
+        "value": "0304002947601",
+        "label": "Unknown Heater 1"
+    },
+    {
+        "deviceId": "01010003",
+        "value": "030400-3066603",
+        "label": "Unknown Heater 11"
+    },
+    {
+        "deviceId": "01010003",
+        "value": "030400821317",
+        "label": "Unknown Heater 9"
+    },
+    {
+        "deviceId": "01010003",
+        "value": "030516-1433601",
+        "label": "Unknown Heater 10"
+    },
+    {
+        "deviceId": "01010003",
+        "value": "0306001231002",
+        "label": "Unknown Cooler 10"
+    },
+    {
+        "deviceId": "01010003",
+        "value": "030600157222",
+        "label": "Unknown Cooler 4"
+    },
+    {
+        "deviceId": "01010003",
+        "value": "0306001639125",
+        "label": "Unknown Cooler 7"
+    },
+    {
+        "deviceId": "01010003",
+        "value": "0306001639133",
+        "label": "Unknown Cooler 9"
+    },
+    {
+        "deviceId": "01010003",
+        "value": "0306001666316",
+        "label": "Unknown Cooler 18"
+    },
+    {
+        "deviceId": "01010003",
+        "value": "0306001769624",
+        "label": "Unknown Cooler 6"
+    },
+    {
+        "deviceId": "01010003",
+        "value": "0306001843901",
+        "label": "Unknown Cooler 1"
+    },
+    {
+        "deviceId": "01010003",
+        "value": "0306002051209",
+        "label": "Unknown Cooler 17"
+    },
+    {
+        "deviceId": "01010003",
+        "value": "0306002051620",
+        "label": "Unknown Cooler 21"
+    },
+    {
+        "deviceId": "01010003",
+        "value": "0306002202118",
+        "label": "Unknown Cooler 2"
+    },
+    {
+        "deviceId": "01010003",
+        "value": "0306002230617",
+        "label": "Unknown Cooler 19"
+    },
+    {
+        "deviceId": "01010003",
+        "value": "0306002459932",
+        "label": "Unknown Cooler 8"
+    },
+    {
+        "deviceId": "01010003",
+        "value": "0306002460903",
+        "label": "Unknown Cooler 11"
+    },
+    {
+        "deviceId": "01010003",
+        "value": "0306002664521",
+        "label": "Unknown Cooler 3"
+    },
+    {
+        "deviceId": "01010003",
+        "value": "030600-2711419",
+        "label": "Unknown Cooler 20"
+    },
+    {
+        "deviceId": "01010003",
+        "value": "0306002896023",
+        "label": "Unknown Cooler 5"
+    },
+    {
+        "deviceId": "01010003",
+        "value": "0306003021407",
+        "label": "Unknown Cooler 15"
+    },
+    {
+        "deviceId": "01010003",
+        "value": "0306003075306",
+        "label": "Unknown Cooler 14"
+    },
+    {
+        "deviceId": "01010003",
+        "value": "030600-3148304",
+        "label": "Unknown Cooler 12"
+    },
+    {
+        "deviceId": "01010003",
+        "value": "030600821408",
+        "label": "Unknown Cooler 16"
+    },
+    {
+        "deviceId": "01010003",
+        "value": "030600949605",
+        "label": "Unknown Cooler 13"
+    },
+    {
+        "deviceId": "01010003",
+        "value": "030700079101",
+        "label": "Split AC"
+    },
+    {
+        "deviceId": "01010003",
+        "value": "0308002181301",
+        "label": "Spiral Mixer BG"
+    },
+    {
+        "deviceId": "01010003",
+        "value": "0308002458101",
+        "label": "Spiral Mixer MD"
+    },
+    {
+        "deviceId": "01010003",
+        "value": "030900056301",
+        "label": "Rotary Oven"
+    },
+    {
+        "deviceId": "01010003",
+        "value": "030900-3169601",
+        "label": "DeckOven 3door"
+    },
+    {
+        "deviceId": "01010003",
+        "value": "031600-3066601",
+        "label": "Proover M/C"
+    },
+    {
+        "deviceId": "01010003",
+        "value": "0317001229501",
+        "label": "Hydraulic Divider"
+    },
+    {
+        "deviceId": "01010003",
+        "value": "031800819301",
+        "label": "Bread Slicer"
+    },
+    {
+        "deviceId": "01010003",
+        "value": "031800973201",
+        "label": "Dough Sheeter"
+    },
+    {
+        "deviceId": "01010004",
+        "value": "0404001640701",
+        "label": "Unknown Heater4"
+    },
+    {
+        "deviceId": "01010004",
+        "value": "0404001718701",
+        "label": "UnKnown Heater1"
+    },
+    {
+        "deviceId": "01010004",
+        "value": "0404002050301",
+        "label": "Unknown Heater3"
+    },
+    {
+        "deviceId": "01010004",
+        "value": "0404002255101",
+        "label": "Unknown Heater2"
+    },
+    {
+        "deviceId": "01010004",
+        "value": "040600000501",
+        "label": "Unknown Cooler3"
+    },
+    {
+        "deviceId": "01010004",
+        "value": "0406002051301",
+        "label": "Unknown Cooler4"
+    },
+    {
+        "deviceId": "01010004",
+        "value": "040600208101",
+        "label": "UnKnown Cooler1"
+    },
+    {
+        "deviceId": "01010004",
+        "value": "0406002638501'",
+        "label": "Unknown Cooler6"
+    },
+    {
+        "deviceId": "01010004",
+        "value": "0406002894601",
+        "label": " Unknown Cooler2"
+    },
+    {
+        "deviceId": "01010004",
+        "value": "040600-3273101",
+        "label": "SOC Cooler2"
+    },
+    {
+        "deviceId": "01010004",
+        "value": "040600411401",
+        "label": "SOC Cooler3"
+    },
+    {
+        "deviceId": "01010004",
+        "value": "040600411701",
+        "label": "Unknown Cooler5"
+    },
+    {
+        "deviceId": "01010004",
+        "value": "040600413201",
+        "label": "SOC Cooler1"
+    },
+    {
+        "deviceId": "01010004",
+        "value": "0419001004001",
+        "label": "Non Veg Freezer Room"
+    },
+    {
+        "deviceId": "01010004",
+        "value": "041900187501",
+        "label": "Dairy Cold Room"
+    },
+    {
+        "deviceId": "01010004",
+        "value": "0419002538301",
+        "label": "F&V Cold Room"
+    },
+    {
+        "deviceId": "01010004",
+        "value": "0419002899301",
+        "label": "Frozen Freezer Room"
+    },
+    {
+        "deviceId": "01010004",
+        "value": "041900824401",
+        "label": "Non Veg Cold Room"
+    }
+]

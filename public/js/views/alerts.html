@@ -1,0 +1,159 @@
+
+
+<div class='box box-solid'>
+    <div class="box-header with-border">
+        <h3 class="box-title">Alerts <span> (OMR Store, Bangalore)</span></h3>
+    </div>
+    <div class='box-body center-block'>
+        <div class="col-lg-3 col-xs-6">
+            <!-- small box -->
+            <div class="small-box bg-blue">
+                <div class="inner">
+                    <h3 class="text-white" data-bind="text:tempTotal">0</h3>
+                    <p class="bold">Temperature Alerts</p>
+                </div>
+                <div class="icon">
+                    <i class="fa fa-snowflake-o"></i>
+                </div>
+                <a href="#" class="small-box-footer" data-bind="click: function(){setAlertType('Temp')}">Filter <i class="fa fa-filter"></i></a>
+            </div>
+        </div>
+
+        <div class="col-lg-3 col-xs-6">
+            <!-- small box -->
+            <div class="small-box bg-yellow">
+                <div class="inner">
+                    <h3 class="text-white" data-bind="text:energyTotal">0</h3>
+                    <p class="bold">Energy Alerts</p>
+                </div>
+                <div class="icon">
+                    <i class="fa fa-flash"></i>
+                </div>
+                <a href="#" class="small-box-footer" data-bind="click: function() {setAlertType('Energy')}">Filter <i class="fa fa-filter"></i></a>
+            </div>
+        </div>
+
+        <div class="col-lg-3 col-xs-6">
+            <!-- small box -->
+            <div class="small-box bg-green">
+                <div class="inner">
+                    <h3 class="text-white" data-bind="text:otherTotal">0</h3>
+                    <p class="bold">Usage/Anomaly Alerts</p>
+                </div>
+                <div class="icon">
+                    <i class="fa fa-wrench"></i>
+                </div>
+                <a href="#" class="small-box-footer" data-bind="click: function(){setAlertType('Others')}">Filter <i class="fa fa-filter"></i></a>
+            </div>
+        </div>
+
+        <div class="col-lg-3 col-xs-6">
+            <a class="btn btn-app" data-bind="click: function(){loadIncident('new');}">
+                <i class="fa fa-plus"></i> Create
+            </a>
+
+            <a class="btn btn-app">
+                <i class="fa fa-clock-o"></i> History
+            </a>
+
+            <a class="btn btn-app disabled">
+                <i class="fa fa-gears"></i> Rules
+            </a>
+
+            <a class="btn btn-app">
+                <span class="badge bg-purple">15</span>
+                <i class="fa fa-users"></i> Personnel
+            </a>
+
+            <a class="btn btn-app">
+                <i class="fa fa-cubes"></i> Assets
+            </a>
+            <a class="btn btn-app disabled">
+                <i class="fa fa-envelope-o"></i> Notifications
+            </a>
+        </div>
+
+    </div>
+
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="box">
+                <div class="box-header">
+                    <h3 class="box-title">Incidents - Alerts </h3>
+
+                    <div class="box-tools">
+                        <div class="input-group input-group-sm" style="width: 300px;">
+                            <!--<input type="text" name="table_search" class="form-control pull-right" placeholder="Search">-->
+
+                            <div class="input-group">
+
+                                <div id="reportrange" class="pull-right" style="background: #fff; cursor: pointer; padding: 5px 10px; border: 1px solid #ccc; width: 100%">
+                                    <i class="fa fa-calendar"></i>&nbsp;
+                                    <span data-bind="text:dateText"></span> <b class="caret"></b>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.box-header -->
+                <div class="box-body table-responsive no-padding">
+                    <table class="table table-hover">
+                        <thead>
+                        <th>Type</th>
+                        <th>Name</th>
+                        <th>Severity</th>                      
+                        <th>Date</th>
+                        <th>Status</th>
+                        <th>Alert</th>
+                        <th>Max Breach</th>
+                        <th>Base Value</th>
+                        </thead>
+                        <!--        ko if:ready()-->
+                        <tbody  data-bind="foreach:incidents">
+                            <tr>
+                                <td data-bind="text:type">0</td>
+                                <td data-bind="text:name">0</td>
+                                <!--                                ko if:(alertType==='Temp')-->
+                                <td><small class="label" data-bind="text: ' ' +Math.round((toTs-ts)*10/1000/60/60)/10+' Hrs' ,css:((severity==='high')?'label-danger fa fa-clock-o':((severity=='medium')?'label-warning fa fa-clock-o':'label-success fa fa-clock-o'))"> </small></td>
+                                <!--                                /ko-->
+                                <!--                                ko if:(alertType==='Energy')-->
+                                <td><small class="label" data-bind="text: ' ' +Math.round((actEnergy-energy_bse)*100/energy_bse)+'%' ,css:((severity==='high')?'label-danger fa fa-arrow-up':((severity=='medium')?'label-warning fa fa-arrow-up':'label-success fa fa-arrow-up'))"> </small></td>
+                                <!--                                /ko-->
+                                <td data-bind="text:new Date(ts).toString().replace(/GMT.*/g,'')">11-7-2014</td>
+                                <td><span class="label" data-bind="text:status,css:(status==='In Progress'?'label-success':(status==='Closed'?'label-default':'label-primary'))"></span></td>
+                                <td data-bind="text:alertText"></td>
+                                <!--                                ko if:(alertType==='Temp')-->
+                                <td><span data-bind="text:Math.round((maxTemp)*10)/10" class="badge label label-danger"></span></td>
+                                <td><span data-bind="text:Math.round((temp_bse)*10)/10" class="badge label label-primary"></span></td>
+                                <!--                                /ko-->
+                                <!--                                ko if:(alertType==='Energy')-->
+                                <td><span data-bind="text:Math.round((actEnergy)*10)/10" class="badge label label-danger"></span></td>
+                                <td><span data-bind="text:Math.round((energy_bse)*10)/10" class="badge label label-primary"></span></td>
+                                <!--                                /ko-->
+
+                                
+                                <td><a data-bind="attr: { href: '#'}"><i class="fa fa-attr: fa-2x"></i></a></td>
+
+                            </tr>
+                        </tbody>
+                        <!--/ko-->
+
+
+
+                    </table>
+
+
+                </div>
+                <div  data-bind="if:!ready(),css:(ready()?'':'overlay')">
+                    <i class="fa fa-refresh fa-spin"></i>
+                </div>
+                <!-- /.box-body -->
+                <div class='box-footer'>
+
+                </div>
+            </div>
+            <!-- /.box -->
+        </div>
+    </div>
+
+</div>

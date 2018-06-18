@@ -1,0 +1,115 @@
+
+<div class="container-fluid">
+    <div class="box" style=" border: 1px solid #f39c12">
+        <div class="box-header with-border bg-yellow-gradient">
+            <span class=" text-bold">ENERGY ANALYSIS</span>
+            <oj-select-one id="attribselect"  style=" padding-left: 20px" value="[[attributeValue]]"  options="[[attributeOptions]]">
+            </oj-select-one>
+            <div class="box-tools pull-right">
+                <div class="btn-group">
+                    <button type="button" class="btn btn-box-tool dropdown-toggle" data-toggle="dropdown">
+                        <i class="fa fa-wrench"></i></button>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a href="#">Action</a></li>
+                        <li><a href="#">Another action</a></li>
+                        <li><a href="#">Something else here</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#">Separated link</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- /.box-header -->
+        <div class="box-body">
+            <div class="row">
+                <div class="col-md-8">
+                    <p class="text-center">
+                        <strong>Energy: Today</strong>
+                    </p>
+
+                    <div class="chart">
+                        <!-- Sales Chart Canvas -->
+                        <div id='ener-container' class="box-body">
+                            <div id="enerChart" data-bind="ojComponent: {
+                    component: 'ojChart', 
+                    type: 'line',
+                    series: enerSeriesData, 
+                    groups: enerGroupsValue,
+                    animationOnDisplay: 'auto',
+                    dataCursor: 'on',                    
+                    animationOnDataChange: 'auto', 
+                    timeAxisType: 'mixedFrequency',                  
+                    orientation: 'vertical',                    
+                    yAxis:  {title: 'Energy (kWh)'},
+                    hideAndShowBehavior: 'withRescale',
+                    zoomAndScroll: 'live',           
+                    legend: {rendered: 'on'},
+                    title: {text: '', hAlign: 'center'},
+                    hoverBehavior: 'dim'
+                }"
+                                 style="width:100%;height:150px;">
+                            </div>
+                        </div>
+                        <!-- /.chart-responsive -->
+                    </div>
+                    <!-- /.col -->
+                    <!-- /.col -->
+                </div>
+                <div class="col-md-4" >
+                    <div class="info-box  " >
+                        <div class="row">
+                            <div class="col-sm-3 col-xs-6">
+                                <span class="info-box-icon bg-yellow  "><i class="fa fa-bolt"></i></span>
+                            </div>
+                            <div class="col-sm-9 col-xs-6">
+                                <div class=" info-align-center bg-yellow-gradient">
+                                    <span class="info-box-text">Energy</span>
+                                    <span class="info-box-number" data-bind="text: meanPower"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /.info-box-content -->
+                        <div class="row ">
+                            <div class="col-sm-3 col-xs-6 ">                            
+                                <div class="description-block ">
+                                    <span class="box-body" data-bind="text: minPower"></span>
+                                    <span class="box-title  text-yellow" style="font-size: 12px;">MIN</span>
+                                </div>
+                                <!-- /.description-block -->
+                            </div>
+                            <!-- /.col -->
+                            <div class="col-sm-3 col-xs-6 ">
+                                <div class="description-block ">
+                                    <span class="box-body"   data-bind="text: maxPower"></span>
+                                    <span class="box-title text-yellow" style="font-size: 12px;">MAX</span>
+                                </div>
+                                <!-- /.description-block -->
+                            </div>
+                            <!-- /.col -->
+                            <div class="col-sm-3 col-xs-6 ">
+                                <div class="description-block ">
+                                    <span class="box-body" data-bind="text: meanPower"></span>
+                                    <span class="box-title text-yellow" style="font-size: 12px;">MEAN</span>
+                                </div>
+                                <!-- /.description-block -->
+                            </div>
+                            <!-- /.col -->
+                            <div class="col-sm-3 col-xs-6 ">
+                                <div class="description-block">
+                                    <span class="box-body" data-bind="text: variancePower"></span>
+                                    <span class="box-title text-yellow" style="font-size: 12px;">VARIANCE </span>
+                                </div>
+                                <!-- /.description-block -->
+                            </div>
+                        </div>
+                        <!-- /.row -->
+                    </div>				
+                    <!-- /.progress-group -->
+                </div>                    
+
+                <!-- /.row -->
+            </div>
+            <!-- ./box-body -->
+        </div>
+    </div>
+</div>

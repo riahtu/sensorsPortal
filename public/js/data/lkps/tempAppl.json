@@ -1,0 +1,98 @@
+[
+    {
+        "label": "'SOC Cooler1",
+        "value": "E2AD22B4"
+    },
+    {
+        "label": "'SOC Cooler2",
+        "value": "D7205B55"
+    },
+    {
+        "label": "'SOC Cooler3",
+        "value": "F24618BB"
+    },
+    {
+        "label": "Non Veg Freezer Room",
+        "value": "EF61E02F"
+    },
+    {
+        "label": "Dairy Cold Room",
+        "value": "E675759B"
+    },
+    {
+        "label": "F&V Cold Room",
+        "value": "D661E5B1"
+    },
+    {
+        "label": "Frozen Freezer Room",
+        "value": "E767AD9D"
+    },
+    {
+        "label": "Non Veg Cold Room",
+        "value": "D5A8F3B0"
+    },
+    {
+        "label": "ODC-Butter & Better",
+        "value": "EF22C32E"
+    },
+    {
+        "label": "ODC-Flavor Milk ",
+        "value": "F69A6CCB"
+    },
+    {
+        "label": "ODC-Cup Curd & Yoghurt",
+        "value": "D17C2135"
+    },
+    {
+        "label": "ODC-Cheese Block & Fresh Diary",
+        "value": "D01E7C82"
+    },
+    {
+        "label": "ODC-Cheese Slice & Paneer",
+        "value": "D61C3966"
+    },
+    {
+        "label": "Freezer-Veg  Island display 1",
+        "value": "DC466A03"
+    },
+    {
+        "label": "Freezer-Veg  Island display 2",
+        "value": "C490F65B"
+    },
+    {
+        "label": "Freezer-Veg  Island display 3",
+        "value": "E353CF49"
+    },
+    {
+        "label": "Freezer-Veg  Island display 4",
+        "value": "E902667A"
+    },
+    {
+        "label": "Freezer-Veg  Island display 5",
+        "value": "CF09E036"
+    },
+    {
+        "label": "Freezer-Non-Veg  Island display  6",
+        "value": "CDEC2968"
+    },
+    {
+        "label": "Freezer-Non-Veg  Island display  7",
+        "value": "DBE17875"
+    },
+    {
+        "label": "Freezer-Non-Veg  Island display  8",
+        "value": "CD7265C5"
+    },
+    {
+        "label": "Chiller Bakery Veg",
+        "value": "DBBC0DD7"
+    },
+    {
+        "label": "Chiller Bakery Non Veg-Cake",
+        "value": "C18BFEEC"
+    },
+    {
+        "label": "Chiller Bakery Non Veg Pastry",
+        "value": "C37FA82F"
+    }
+]

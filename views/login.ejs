@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Store Monitor</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="login-page">
+    <div class="form">
+      <span class="app-name">Store Asset Monitor</span>
+      <form class="login-form" action="/login" method="post">
+        <input name='username' id="username" type="text" placeholder="username" />
+        <input name='password' id="password" type="password" placeholder="password" />
+        <button id="signin" type="submit">login</button>
+      </form>
+      <br>
+      <span id="err"><i><%=root%></i></span>
+    </div>
+  </div>
+</body>
+
+</html>
